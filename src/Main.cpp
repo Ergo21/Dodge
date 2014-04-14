@@ -1,12 +1,4 @@
-#define GLEW_STATIC
-#include <GL/glew.h>
-#include <GL/gl.h>
-#include <SDL2/SDL.h>
-#include <iostream>
-#include <fstream>
-
-
-using namespace std;
+#include "Main.h"
 
 int main(int argc, char ** argv)
 {
