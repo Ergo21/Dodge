@@ -23,4 +23,5 @@ class Main
     A simple Hello World method
   */
   int main(int argc, char ** argv);
-}
+};
+#endif
