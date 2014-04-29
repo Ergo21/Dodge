@@ -17,8 +17,8 @@
 #include "vectormath/scalar/cpp/vectormath_aos.h"
 #include "Camera.h"
 #include "BoundingBox.h"
-//#include "ModelTriangle.h"
-//#include "PolygonTest.h"
+#include "ModelTriangle.h"
+#include "PolygonTest.h"
 
 using namespace std;
 using namespace Vectormath::Aos;

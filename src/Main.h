@@ -17,9 +17,9 @@
 #include <vector>
 #include <memory>
 
-//#include "GameAsset.h"
+#include "GameAsset.h"
 //#include "Md2Asset.h"
-//#include "TriangularPyramidAsset.h"
+#include "TriangularPyramidAsset.h"
 //#include "BallisticInterpolator.h"
 #include "Camera.h"
 
@@ -35,7 +35,7 @@ using namespace std;
   int main(int argc, char ** argv);
 
   bool horrible_global_go = false;
-  //vector<shared_ptr<GameAsset> > assets; //All world objects
+  vector<shared_ptr<GameAsset> > assets; //All world objects
   SDL_Window * window = nullptr;
 
   //! Timing Method

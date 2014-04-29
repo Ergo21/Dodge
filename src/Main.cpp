@@ -14,6 +14,7 @@
  * to call display() from the thread in which the OpenGL 
  * context was created.
  */
+
 Uint32 display(Uint32 interval, void *param) {
 	SDL_Event event;
 	event.type = SDL_USEREVENT;
@@ -30,7 +31,7 @@ void display() {
   
 	// This O(n + n^2 + n) sequence of loops is written for clarity,
 	// not efficiency
-/*	for(auto it : assets) {
+	for(auto it : assets) {
 	  if(horrible_global_go) {it->update();}
 	}
   
@@ -45,7 +46,7 @@ void display() {
   	for(auto it : assets) {
     	  it->draw();
   	}
-*/	
+	
   	// Don't forget to swap the buffers
   	SDL_GL_SwapWindow(window);
 }
@@ -243,6 +244,8 @@ int main(int argc, char ** argv)
 	
 	// Call the function "display" every delay milliseconds
 	SDL_AddTimer(delay, display, NULL);
+
+	assets.push_back(shared_ptr<TriangularPyramidAsset> (new TriangularPyramidAsset(10, 0, 0)));
 
 	gameLoop();
 	

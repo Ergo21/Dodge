@@ -12,13 +12,25 @@
 #ifndef TRIANGULARPYRAMIDASSET_H_
 #define TRIANGULARPYRAMIDASSET_H_
 
+  //! TriangularPyramidAsset Class
+  /*!
+    	A class to a simple triangular pyramid.
+  */
 class TriangularPyramidAsset : public GameAsset {
  public:
   TriangularPyramidAsset();
   TriangularPyramidAsset(float x, float y, float z);
   ~TriangularPyramidAsset();
 
+  //! Update Method
+  /*!
+    	Updates the asset using the interpolator.
+  */
   virtual void update();
+  //! Draw Method
+  /*!
+    	Draws this asset in a 3D context.
+  */
   virtual void draw();
   void setInterpolator(shared_ptr<IInterpolator> li);
  private:

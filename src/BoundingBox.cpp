@@ -1,3 +1,10 @@
+/*
+	Axiom
+	BoundingBox.cpp
+	Author: Joseph Watts
+	Created on: 29 Apr 2014
+	Based on code provided by aidan
+*/
 #include "BoundingBox.h"
 
 BoundingBox::BoundingBox(const Point3 & c, const float extent_x, const float extent_y, const float extent_z) {

@@ -39,7 +39,7 @@ bool GameAsset::collidesWith(GameAsset & a ) {
 	return bbox->collidesWith((*a.bbox));
 }
 
-/*vector<ModelTriangle> GameAsset::getTriangles()
+vector<ModelTriangle> GameAsset::getTriangles()
 {
 	vector<ModelTriangle> thTriangles;
 	Point3 poi1, poi2, poi3;
@@ -61,7 +61,7 @@ bool GameAsset::collidesWith(GameAsset & a ) {
 		thTriangles.push_back(ModelTriangle(poi1, poi2, poi3));
 	}
 	return thTriangles;
-}*/
+}
 
 void GameAsset::draw() {
   glUseProgram(program);
