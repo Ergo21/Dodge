@@ -8,8 +8,9 @@ install-sh
 Makefile
 Makefile.in
 missing
+*.o
 src/Axiom
-src/Main.o
+src/*.o
 src/Makefile
 src/Makefile.in
 
