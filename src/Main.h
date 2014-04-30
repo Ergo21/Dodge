@@ -18,10 +18,11 @@
 #include <memory>
 
 #include "GameAsset.h"
-//#include "Md2Asset.h"
+#include "Md2Asset.h"
 #include "TriangularPyramidAsset.h"
-//#include "BallisticInterpolator.h"
+#include "BallisticInterpolator.h"
 #include "Camera.h"
+#include "CuboidAsset.h"
 
 using namespace std;
 

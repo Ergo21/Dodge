@@ -247,6 +247,8 @@ int main(int argc, char ** argv)
 
 	assets.push_back(shared_ptr<TriangularPyramidAsset> (new TriangularPyramidAsset(10, 0, 0)));
 
+	assets.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(-2, 0, 0, 1, 2, 1)));
+
 	gameLoop();
 	
 	return 0;

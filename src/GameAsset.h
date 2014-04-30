@@ -72,7 +72,10 @@ protected:
     		Creates this assets shader program.
   	*/
 	GLuint make_program(GLuint vertex_shader, GLuint fragment_shader);
-	//vector<ModelTriangle> getTriangles();
+  	/*!
+    		Returns this model as a list of ModelTriangle
+  	*/
+	vector<ModelTriangle> getTriangles();
 
 	/* For keeping track of OpenGL VBOs */
 	GLuint vertex_buffer, element_buffer;
