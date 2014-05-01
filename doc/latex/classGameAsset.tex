@@ -42,7 +42,9 @@ G\-Luint \hyperlink{classGameAsset_adfe27369433f07092b08f24b0feedfc9}{make\-\_\-
 G\-Luint \hyperlink{classGameAsset_ac728e885b52c93c3e4976a339de54545}{make\-\_\-shader} (G\-Lenum type, const char $\ast$filename)
 \begin{DoxyCompactList}\small\item\em Create Shaders method. \end{DoxyCompactList}\item 
 G\-Luint \hyperlink{classGameAsset_a9d9574a21cf6b52f7a825879ca50b19d}{make\-\_\-program} (G\-Luint vertex\-\_\-shader, G\-Luint fragment\-\_\-shader)
-\begin{DoxyCompactList}\small\item\em Create program method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Create program method. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classModelTriangle}{Model\-Triangle} $>$ \hyperlink{classGameAsset_aad7eeea6e2a9544fd2b2fff522cca56b}{get\-Triangles} ()
+\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -111,6 +113,17 @@ Collision method.
 Method to detect if this asset collides with given asset. 
 
 Definition at line 31 of file Game\-Asset.\-cpp.
+
+\hypertarget{classGameAsset_aad7eeea6e2a9544fd2b2fff522cca56b}{\index{Game\-Asset@{Game\-Asset}!get\-Triangles@{get\-Triangles}}
+\index{get\-Triangles@{get\-Triangles}!GameAsset@{Game\-Asset}}
+\subsubsection[{get\-Triangles}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Model\-Triangle} $>$ Game\-Asset\-::get\-Triangles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGameAsset_aad7eeea6e2a9544fd2b2fff522cca56b}
+Returns this model as a list of \hyperlink{classModelTriangle}{Model\-Triangle} 
+
+Definition at line 42 of file Game\-Asset.\-cpp.
 
 \hypertarget{classGameAsset_adfe27369433f07092b08f24b0feedfc9}{\index{Game\-Asset@{Game\-Asset}!make\-\_\-buffer@{make\-\_\-buffer}}
 \index{make\-\_\-buffer@{make\-\_\-buffer}!GameAsset@{Game\-Asset}}

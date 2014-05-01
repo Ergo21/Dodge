@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ssefloat',['SSEFloat',['../unionSSEFloat.html',1,'']]]
+  ['quat',['Quat',['../classVectormath_1_1Soa_1_1Quat.html',1,'Vectormath::Soa']]],
+  ['quat',['Quat',['../classVectormath_1_1Aos_1_1Quat.html',1,'Vectormath::Aos']]]
 ];

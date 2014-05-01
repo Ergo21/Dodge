@@ -297,7 +297,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    Uint32 width = 640;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    Uint32 height = 480;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    Uint32 delay = 1000/60; <span class="comment">// in milliseconds</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    Uint32 delay = 1000/30; <span class="comment">// in milliseconds</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="comment">// Initialise SDL - when using C/C++ it&#39;s common to have to</span></div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">// initialise libraries by calling a function within them.</span></div>
@@ -334,17 +334,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment">// Call the function &quot;display&quot; every delay milliseconds</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    SDL_AddTimer(delay, display, NULL);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    assets.push_back(shared_ptr&lt;TriangularPyramidAsset&gt; (<span class="keyword">new</span> <a class="code" href="classTriangularPyramidAsset.html">TriangularPyramidAsset</a>(10, 0, 0)));</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    gameLoop();</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">/*assets.push_back(shared_ptr&lt;TriangularPyramidAsset&gt; (new TriangularPyramidAsset(10, 0, 0)));</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">    assets.push_back(shared_ptr&lt;CuboidAsset&gt; (new CuboidAsset(-2, 0, 0, 1, 2, 1)));*/</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <a class="code" href="classLevelLoader.html">LevelLoader</a> temLev;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    assets = temLev.<a class="code" href="classLevelLoader.html#aa6c896057092099df7ec221628daaa56">getLevel</a>(1);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    gameLoop();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
 <div class="ttc" id="classCamera_html_aa84baebe5d771ddfd82a5b55bd3fde39"><div class="ttname"><a href="classCamera.html#aa84baebe5d771ddfd82a5b55bd3fde39">Camera::getInstance</a></div><div class="ttdeci">static Camera &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00055">Camera.cpp:55</a></div></div>
-<div class="ttc" id="classTriangularPyramidAsset_html"><div class="ttname"><a href="classTriangularPyramidAsset.html">TriangularPyramidAsset</a></div><div class="ttdoc">TriangularPyramidAsset Class. </div><div class="ttdef"><b>Definition:</b> <a href="TriangularPyramidAsset_8h_source.html#l00019">TriangularPyramidAsset.h:19</a></div></div>
+<div class="ttc" id="classLevelLoader_html_aa6c896057092099df7ec221628daaa56"><div class="ttname"><a href="classLevelLoader.html#aa6c896057092099df7ec221628daaa56">LevelLoader::getLevel</a></div><div class="ttdeci">vector&lt; shared_ptr&lt; GameAsset &gt; &gt; getLevel(int)</div><div class="ttdoc">Get level method. </div><div class="ttdef"><b>Definition:</b> <a href="LevelLoader_8cpp_source.html#l00011">LevelLoader.cpp:11</a></div></div>
 <div class="ttc" id="classVectormath_1_1Aos_1_1Matrix3_html"><div class="ttname"><a href="classVectormath_1_1Aos_1_1Matrix3.html">Vectormath::Aos::Matrix3</a></div><div class="ttdef"><b>Definition:</b> <a href="ppu_2cpp_2vectormath__aos_8h_source.html#l01365">vectormath_aos.h:1365</a></div></div>
 <div class="ttc" id="classVectormath_1_1Aos_1_1Vector3_html"><div class="ttname"><a href="classVectormath_1_1Aos_1_1Vector3.html">Vectormath::Aos::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="ppu_2cpp_2vectormath__aos_8h_source.html#l00061">vectormath_aos.h:61</a></div></div>
+<div class="ttc" id="classLevelLoader_html"><div class="ttname"><a href="classLevelLoader.html">LevelLoader</a></div><div class="ttdoc">Level Class. </div><div class="ttdef"><b>Definition:</b> <a href="LevelLoader_8h_source.html#l00017">LevelLoader.h:17</a></div></div>
 <div class="ttc" id="classCamera_html_a16c5e6f7b2eed95a78675f55c4a435e6"><div class="ttname"><a href="classCamera.html#a16c5e6f7b2eed95a78675f55c4a435e6">Camera::setCamera</a></div><div class="ttdeci">void setCamera(const Matrix4 &amp;m)</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00021">Camera.cpp:21</a></div></div>
 <div class="ttc" id="classCamera_html_a156b6aba4309cde6f0252ff325663e2f"><div class="ttname"><a href="classCamera.html#a156b6aba4309cde6f0252ff325663e2f">Camera::getCameraM</a></div><div class="ttdeci">Matrix4 &amp; getCameraM()</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00051">Camera.cpp:51</a></div></div>
 <div class="ttc" id="classCamera_html_a25f2f9d8ccc76f38c0580709587afadf"><div class="ttname"><a href="classCamera.html#a25f2f9d8ccc76f38c0580709587afadf">Camera::getCamera</a></div><div class="ttdeci">float * getCamera()</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00027">Camera.cpp:27</a></div></div>
@@ -352,7 +358,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 29 2014 15:30:34 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 1 2014 12:15:43 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

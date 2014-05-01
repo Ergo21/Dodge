@@ -140,37 +140,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    GLuint make_shader(GLenum type, <span class="keyword">const</span> <span class="keywordtype">char</span> *filename);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    GLuint make_program(GLuint vertex_shader, GLuint fragment_shader);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">//vector&lt;ModelTriangle&gt; getTriangles();</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">/* For keeping track of OpenGL VBOs */</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    GLuint vertex_buffer, element_buffer;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    GLuint vertex_shader, fragment_shader, program;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    GLint position_attrib;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    GLint camera_uniform;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    GLint model_uniform;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    GLfloat * g_vertex_buffer_data;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    GLushort * g_element_buffer_data;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// How many vertices/triangles in this model</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">int</span> num_vertices;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">int</span> num_triangles;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    shared_ptr&lt;BoundingBox&gt; bbox;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    vector&lt;ModelTriangle&gt; getTriangles();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">/* For keeping track of OpenGL VBOs */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    GLuint vertex_buffer, element_buffer;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    GLuint vertex_shader, fragment_shader, program;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    GLint position_attrib;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    GLint camera_uniform;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    GLint model_uniform;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    GLfloat * g_vertex_buffer_data;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    GLushort * g_element_buffer_data;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// How many vertices/triangles in this model</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> num_vertices;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> num_triangles;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    shared_ptr&lt;BoundingBox&gt; bbox;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> common_init(); <span class="comment">// because we don&#39;t have delegating constructors yet (http://gcc.gnu.org/projects/cxx0x.html)</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">string</span> v_shader;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">string</span> f_shader;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> common_init(); <span class="comment">// because we don&#39;t have delegating constructors yet (http://gcc.gnu.org/projects/cxx0x.html)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">string</span> v_shader;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">string</span> f_shader;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classGameAsset_html"><div class="ttname"><a href="classGameAsset.html">GameAsset</a></div><div class="ttdoc">GameAsset Class. </div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8h_source.html#l00033">GameAsset.h:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 29 2014 15:30:31 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 1 2014 12:15:40 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

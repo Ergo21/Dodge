@@ -106,8 +106,8 @@ Inheritance diagram for CuboidAsset:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a05c45a76a82b779f130b0b5828d791c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05c45a76a82b779f130b0b5828d791c2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CuboidAsset</b> (float x, float y, float z, float sX, float sY, float sZ)</td></tr>
+<tr class="memitem:a05c45a76a82b779f130b0b5828d791c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCuboidAsset.html#a05c45a76a82b779f130b0b5828d791c2">CuboidAsset</a> (float x, float y, float z, float sX, float sY, float sZ)</td></tr>
+<tr class="memdesc:a05c45a76a82b779f130b0b5828d791c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor Method.  <a href="#a05c45a76a82b779f130b0b5828d791c2">More...</a><br/></td></tr>
 <tr class="separator:a05c45a76a82b779f130b0b5828d791c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840b611da0e48bafef023ff98d97cf5b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCuboidAsset.html#a840b611da0e48bafef023ff98d97cf5b">update</a> ()</td></tr>
 <tr class="memdesc:a840b611da0e48bafef023ff98d97cf5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update Method.  <a href="#a840b611da0e48bafef023ff98d97cf5b">More...</a><br/></td></tr>
@@ -141,6 +141,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a9d9574a21cf6b52f7a825879ca50b19d inherit pro_methods_classGameAsset"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#a9d9574a21cf6b52f7a825879ca50b19d">make_program</a> (GLuint vertex_shader, GLuint fragment_shader)</td></tr>
 <tr class="memdesc:a9d9574a21cf6b52f7a825879ca50b19d inherit pro_methods_classGameAsset"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create program method.  <a href="#a9d9574a21cf6b52f7a825879ca50b19d">More...</a><br/></td></tr>
 <tr class="separator:a9d9574a21cf6b52f7a825879ca50b19d inherit pro_methods_classGameAsset"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7eeea6e2a9544fd2b2fff522cca56b inherit pro_methods_classGameAsset"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classModelTriangle.html">ModelTriangle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#aad7eeea6e2a9544fd2b2fff522cca56b">getTriangles</a> ()</td></tr>
+<tr class="separator:aad7eeea6e2a9544fd2b2fff522cca56b inherit pro_methods_classGameAsset"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classGameAsset"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classGameAsset')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classGameAsset.html">GameAsset</a></td></tr>
 <tr class="memitem:a1a1d227eba2765b025f9f453700c2359 inherit pro_attribs_classGameAsset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a1d227eba2765b025f9f453700c2359"></a>
 GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>vertex_buffer</b></td></tr>
@@ -187,7 +189,63 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 <p>This class is designed to draw cuboids. </p>
 
 <p>Definition at line <a class="el" href="CuboidAsset_8h_source.html#l00019">19</a> of file <a class="el" href="CuboidAsset_8h_source.html">CuboidAsset.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a05c45a76a82b779f130b0b5828d791c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CuboidAsset::CuboidAsset </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sZ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor Method. </p>
+<p>x, y, z = Coords, sX, sY, sZ = dimensions </p>
+
+<p>Definition at line <a class="el" href="CuboidAsset_8cpp_source.html#l00019">19</a> of file <a class="el" href="CuboidAsset_8cpp_source.html">CuboidAsset.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="adf627dc1cad3cfe5a039d829b4ad2c32"></a>
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +313,7 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 29 2014 15:30:35 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 1 2014 12:15:44 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
