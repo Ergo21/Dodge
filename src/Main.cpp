@@ -64,7 +64,8 @@ void gameLoop() {
 	Vector3 locFor = Vector3(0,0,1);
 	Vector3 locRig = Vector3(1,0,0);
 	Vector3 locUp  = Vector3(0,1,0);
-	float tAng = 3.1415926/8;
+	float pi = 3.1415926;
+	float tAng = pi/256;
 	float tAngMem = 0;
 
 	while (SDL_WaitEvent(&event)) {
@@ -77,6 +78,48 @@ void gameLoop() {
 			  display();
 			  break;
 			}
+			case SDL_MOUSEMOTION: {
+			  if(SDL_GetRelativeMouseMode() == SDL_TRUE)
+			  {
+				Matrix4 camera = Camera::getInstance().getCameraM();			
+
+				if(event.motion.xrel < -5)
+				{
+					Camera::getInstance().setCamera((camera * Matrix4::rotation(tAng, locUp)));
+					tAngMem += tAng;
+				}
+				else if(event.motion.xrel > 5)
+				{
+					Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng, locUp)));
+					tAngMem -= tAng;
+				}
+
+				/*if(event.motion.yrel > 5)	//Bugs when used for too long
+				{
+					Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng, locRig)));
+				}
+				else if(event.motion.yrel < -5)
+				{				
+					Camera::getInstance().setCamera((camera * Matrix4::rotation(tAng, locRig)));
+				}*/
+				
+				if(tAngMem >= 3.1415926)
+				{
+					tAngMem -= 2*3.1415926;
+				}
+				else if(tAngMem <= -3.1415926)
+				{
+					tAngMem += 2*3.1415926;
+				}
+				
+				locRig = Vector3( cos(tAngMem), locRig.getY(), sin(tAngMem));
+				locFor = Vector3( sin(tAngMem), locFor.getY(), cos(tAngMem));
+				//cout << "locRig X: " << cos(tAngMem) << ", Y: " << locRig.getY() << ", Z: " << sin(tAngMem) << endl;
+				//cout << "locFor X: " << sin(tAngMem) << ", Y: " << locFor.getY() << ", Z: " << cos(tAngMem) << endl;
+
+			   }
+
+			}
 			case SDL_KEYUP:
 			  //			  Camera::getInstance().setCamera(Matrix4::identity());
 			  break;
@@ -84,41 +127,140 @@ void gameLoop() {
 			  Matrix4 camera = Camera::getInstance().getCameraM();
 			  switch(event.key.keysym.sym){
 			  case SDLK_ESCAPE: {
-				/*if(SDL_GetRelativeMouseMode() == SDL_TRUE)
+				if(SDL_GetRelativeMouseMode() == SDL_TRUE)
 				{
 					SDL_SetRelativeMouseMode(SDL_FALSE);
 				}
 				else
 				{
 					SDL_SetRelativeMouseMode(SDL_TRUE);
-				}*/
+				}
 				break;
 			  }
 			  case SDLK_w: {
-				tCam = Camera::getInstance().getCameraM().getUpper3x3();
-				
-				dCam = (tCam*locFor);
-				
+				float x = 0;
+				float z = 1;
 
-				Camera::getInstance().setCamera(camera * Matrix4::translation(dCam) );
+				if(tAngMem >= 0 && tAngMem <= pi/2)
+				{
+					x = -tAngMem/(pi/2);
+					z = x + 1;
+				}
+				else if(tAngMem > pi/2 && tAngMem <= pi)
+				{
+					x = (tAngMem-(pi/2))/(pi/2) - 1;
+					z = -1-x;
+				}
+				else if(tAngMem > -pi && tAngMem <= -pi/2)
+				{
+					x = 1 + (tAngMem + (pi/2))/(pi/2); 
+					z = x - 1; 
+				}
+				else
+				{
+					x = -tAngMem/(pi/2);
+					z = 1 -x;
+				}
+				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
+				thTemCam.setX(thTemCam.getX()+x);
+				thTemCam.setZ(thTemCam.getZ()+z);
+				Camera::getInstance().getCameraM().setCol3(thTemCam);
 
 				break;
 			  }
 			  case SDLK_s: {
-				tCam = Camera::getInstance().getCameraM().getUpper3x3();
-				
-				dCam = tCam*-locFor;
+				float x = 0;
+				float z = -1;
 
-				Camera::getInstance().setCamera(camera * Matrix4::translation(dCam) );
+				if(tAngMem >= 0 && tAngMem <= pi/2)
+				{
+					x = -tAngMem/(pi/2);
+					z = x + 1;
+				}
+				else if(tAngMem > pi/2 && tAngMem <= pi)
+				{
+					x = (tAngMem-(pi/2))/(pi/2) - 1;
+					z = -1-x;
+				}
+				else if(tAngMem > -pi && tAngMem <= -pi/2)
+				{
+					x = 1 + (tAngMem + (pi/2))/(pi/2);
+					z = x - 1; 
+				}
+				else
+				{
+					x = -tAngMem/(pi/2);
+					z = 1 -x;
+				}
+				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
+				thTemCam.setX(thTemCam.getX()-x);
+				thTemCam.setZ(thTemCam.getZ()-z);
+				Camera::getInstance().getCameraM().setCol3(thTemCam);
 				break;
 			  }
 			  case SDLK_a: {
-				Camera::getInstance().setCamera(camera * Matrix4::translation(-locRig) );
+				float x = 1; //1 is right
+				float z = 0; //1 is Forward, angle left is positive going to pi before flipping to -pi
+
+				if(tAngMem >= 0 && tAngMem <= pi/2)
+				{
+					x = 1-tAngMem/(pi/2);
+					z = 1 - x;
+				}
+				else if(tAngMem > pi/2 && tAngMem <= pi)
+				{
+					x = -(tAngMem-(pi/2))/(pi/2); //Neg 0 -1
+					z = 1+x; //Pos 1 0
+				}
+				else if(tAngMem > -pi && tAngMem <= -pi/2)
+				{
+					x = (tAngMem + (pi/2))/(pi/2); //Neg 0 -1
+					z = -1-x; //Neg -1 0
+					//x = -(tAngMem+pi)/(pi/2);
+					//z = -1-x;
+				}
+				else
+				{
+					x = 1-tAngMem/(pi/2); //Pos 1 0
+					z = 1 -x; //Neg 0 -1
+				}
+				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
+				thTemCam.setX(thTemCam.getX()-x);
+				thTemCam.setZ(thTemCam.getZ()-z);
+				Camera::getInstance().getCameraM().setCol3(thTemCam);
 
 				break;
 			  }
 			  case SDLK_d: {
-				Camera::getInstance().setCamera(camera * Matrix4::translation(locRig) );
+				float x = 1; //1 is right
+				float z = 0; //1 is Forward, angle left is positive going to pi before flipping to -pi
+
+				if(tAngMem >= 0 && tAngMem <= pi/2)
+				{
+					x = 1-tAngMem/(pi/2);
+					z = 1 - x;
+				}
+				else if(tAngMem > pi/2 && tAngMem <= pi)
+				{
+					x = -(tAngMem-(pi/2))/(pi/2); //Neg 0 -1
+					z = 1+x; //Pos 1 0
+				}
+				else if(tAngMem > -pi && tAngMem <= -pi/2)
+				{
+					x = (tAngMem + (pi/2))/(pi/2); //Neg 0 -1
+					z = -1-x; //Neg -1 0
+					//x = -(tAngMem+pi)/(pi/2);
+					//z = -1-x;
+				}
+				else
+				{
+					x = 1-tAngMem/(pi/2); //Pos 1 0
+					z = 1 -x; //Neg 0 -1
+				}
+				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
+				thTemCam.setX(thTemCam.getX()+x);
+				thTemCam.setZ(thTemCam.getZ()+z);
+				Camera::getInstance().getCameraM().setCol3(thTemCam);
 
 				break;
 			  }
@@ -139,16 +281,28 @@ void gameLoop() {
 				cout<< " "<<endl;
 				break;
 			  }
-			  case SDLK_LEFT: {
+			  case SDLK_o: {
+			    	Camera::getInstance().setCamera((camera * Matrix4::rotation(-3.1415926/8, locFor)));
+			    	break;
+			  }
+			  case SDLK_p: {
+			    	Camera::getInstance().setCamera((camera * Matrix4::rotation(3.1415926/8, locFor)));
+			    	break;
+			  }
+			  case SDLK_g: {
+			    	horrible_global_go = true;
+			    	break;
+			  }
+			   case SDLK_LEFT: {
 				
 			    Camera::getInstance().setCamera((camera * Matrix4::rotation(tAng, locUp)));
 				tAngMem += tAng;
 
-				if(tAngMem >= 2*3.1415926)
+				if(tAngMem >= 3.1415926)
 				{
 					tAngMem -= 2*3.1415926;
 				}
-				else if(tAngMem <= -2*3.1415926)
+				else if(tAngMem <= -3.1415926)
 				{
 					tAngMem += 2*3.1415926;
 				}
@@ -162,11 +316,11 @@ void gameLoop() {
 			    Camera::getInstance().setCamera(camera * Matrix4::rotation(-tAng, locUp) );
 				tAngMem -= tAng;
 
-				if(tAngMem >= 2*3.1415926)
+				if(tAngMem >= 3.1415926)
 				{
 					tAngMem -= 2*3.1415926;
 				}
-				else if(tAngMem <= -2*3.1415926)
+				else if(tAngMem <= -3.1415926)
 				{
 					tAngMem += 2*3.1415926;
 				}
@@ -183,18 +337,6 @@ void gameLoop() {
 			  }
 			  case SDLK_DOWN: {
 			    	Camera::getInstance().setCamera((camera * Matrix4::rotation(-3.1415926/8, locRig)));
-			    	break;
-			  }
-			  case SDLK_o: {
-			    	Camera::getInstance().setCamera((camera * Matrix4::rotation(-3.1415926/8, locFor)));
-			    	break;
-			  }
-			  case SDLK_p: {
-			    	Camera::getInstance().setCamera((camera * Matrix4::rotation(3.1415926/8, locFor)));
-			    	break;
-			  }
-			  case SDLK_g: {
-			    	horrible_global_go = true;
 			    	break;
 			  }
 			  default:
@@ -245,6 +387,7 @@ int main(int argc, char ** argv)
 	
 	// Call the function "display" every delay milliseconds
 	SDL_AddTimer(delay, display, NULL);
+	SDL_SetRelativeMouseMode(SDL_TRUE);
 
 	/*assets.push_back(shared_ptr<TriangularPyramidAsset> (new TriangularPyramidAsset(10, 0, 0)));
 
