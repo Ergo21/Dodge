@@ -19,6 +19,10 @@
 class CuboidAsset : public GameAsset {
  public:
   CuboidAsset();
+  //! Constructor Method
+  /*!
+    	x, y, z = Coords, sX, sY, sZ = dimensions
+  */
   CuboidAsset(float x, float y, float z, float sX, float sY, float sZ);
   ~CuboidAsset();
   

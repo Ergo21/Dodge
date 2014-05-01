@@ -23,6 +23,7 @@
 #include "BallisticInterpolator.h"
 #include "Camera.h"
 #include "CuboidAsset.h"
+#include "LevelLoader.h"
 
 using namespace std;
 

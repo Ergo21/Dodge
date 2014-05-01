@@ -208,7 +208,7 @@ int main(int argc, char ** argv)
 {
 	Uint32 width = 640;
 	Uint32 height = 480;
-	Uint32 delay = 1000/60; // in milliseconds
+	Uint32 delay = 1000/30; // in milliseconds
 
 	// Initialise SDL - when using C/C++ it's common to have to
 	// initialise libraries by calling a function within them.
@@ -245,9 +245,12 @@ int main(int argc, char ** argv)
 	// Call the function "display" every delay milliseconds
 	SDL_AddTimer(delay, display, NULL);
 
-	assets.push_back(shared_ptr<TriangularPyramidAsset> (new TriangularPyramidAsset(10, 0, 0)));
+	/*assets.push_back(shared_ptr<TriangularPyramidAsset> (new TriangularPyramidAsset(10, 0, 0)));
 
-	assets.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(-2, 0, 0, 1, 2, 1)));
+	assets.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(-2, 0, 0, 1, 2, 1)));*/
+	
+	LevelLoader temLev;
+	assets = temLev.getLevel(1);
 
 	gameLoop();
 	
