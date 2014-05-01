@@ -97,18 +97,19 @@ void gameLoop() {
 			  case SDLK_w: {
 				tCam = Camera::getInstance().getCameraM().getUpper3x3();
 				
-				dCam = (tCam*Vector3(0.0, 0.0, 1.0));
+				dCam = (tCam*locFor);
+				
 
-				Camera::getInstance().setCamera(camera * Matrix4::translation(locFor) );
+				Camera::getInstance().setCamera(camera * Matrix4::translation(dCam) );
 
 				break;
 			  }
 			  case SDLK_s: {
 				tCam = Camera::getInstance().getCameraM().getUpper3x3();
 				
-				dCam = tCam*Vector3(0.0, 0.0, -1.0);
+				dCam = tCam*-locFor;
 
-				Camera::getInstance().setCamera(camera * Matrix4::translation(-locFor) );
+				Camera::getInstance().setCamera(camera * Matrix4::translation(dCam) );
 				break;
 			  }
 			  case SDLK_a: {
