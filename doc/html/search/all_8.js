@@ -6,8 +6,11 @@ var searchData=
   ['make_5fshader',['make_shader',['../classGameAsset.html#ac728e885b52c93c3e4976a339de54545',1,'GameAsset']]],
   ['matrix3',['Matrix3',['../classVectormath_1_1Aos_1_1Matrix3.html',1,'Vectormath::Aos']]],
   ['matrix3',['Matrix3',['../classVectormath_1_1Soa_1_1Matrix3.html',1,'Vectormath::Soa']]],
-  ['matrix4',['Matrix4',['../classVectormath_1_1Soa_1_1Matrix4.html',1,'Vectormath::Soa']]],
   ['matrix4',['Matrix4',['../classVectormath_1_1Aos_1_1Matrix4.html',1,'Vectormath::Aos']]],
+  ['matrix4',['Matrix4',['../classVectormath_1_1Soa_1_1Matrix4.html',1,'Vectormath::Soa']]],
   ['md2asset',['Md2Asset',['../classMd2Asset.html',1,'']]],
-  ['modeltriangle',['ModelTriangle',['../classModelTriangle.html',1,'']]]
+  ['modeltriangle',['ModelTriangle',['../classModelTriangle.html',1,'']]],
+  ['movex',['moveX',['../classGameAsset.html#a9a3d6f67fb27e862458a02a7a7eb55dd',1,'GameAsset']]],
+  ['movey',['moveY',['../classGameAsset.html#a5252c2f4119fdc5be9bc8827fb351374',1,'GameAsset']]],
+  ['movez',['moveZ',['../classGameAsset.html#adfd83d678c0266dfc919bae6b6543495',1,'GameAsset']]]
 ];

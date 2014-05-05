@@ -116,12 +116,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a612793ce2a354d2f8839a779d0ca2227"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#a612793ce2a354d2f8839a779d0ca2227">collidesWith</a> (<a class="el" href="classGameAsset.html">GameAsset</a> &amp;a)</td></tr>
 <tr class="memdesc:a612793ce2a354d2f8839a779d0ca2227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collision method.  <a href="#a612793ce2a354d2f8839a779d0ca2227">More...</a><br/></td></tr>
 <tr class="separator:a612793ce2a354d2f8839a779d0ca2227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e2e9faf5cc690677549cbaf30ab80a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#aa4e2e9faf5cc690677549cbaf30ab80a">setGAP</a> (shared_ptr&lt; <a class="el" href="classGAPlus.html">GAPlus</a> &gt; g)</td></tr>
+<tr class="memdesc:aa4e2e9faf5cc690677549cbaf30ab80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <a class="el" href="classGAPlus.html" title="GAPlus Class. ">GAPlus</a> method.  <a href="#aa4e2e9faf5cc690677549cbaf30ab80a">More...</a><br/></td></tr>
+<tr class="separator:aa4e2e9faf5cc690677549cbaf30ab80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d64bc9652249a4d5512b52432b8154a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d64bc9652249a4d5512b52432b8154a"></a>
+shared_ptr&lt; <a class="el" href="classGAPlus.html">GAPlus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGAP</b> ()</td></tr>
+<tr class="separator:a4d64bc9652249a4d5512b52432b8154a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d7e18a8f1dd8ba89ed1bd14f2affeab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d7e18a8f1dd8ba89ed1bd14f2affeab"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> ()</td></tr>
 <tr class="separator:a2d7e18a8f1dd8ba89ed1bd14f2affeab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42688ec8f02e201eaaa01e74a112083f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42688ec8f02e201eaaa01e74a112083f"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()=0</td></tr>
 <tr class="separator:a42688ec8f02e201eaaa01e74a112083f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a3d6f67fb27e862458a02a7a7eb55dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#a9a3d6f67fb27e862458a02a7a7eb55dd">moveX</a> (float x)</td></tr>
+<tr class="separator:a9a3d6f67fb27e862458a02a7a7eb55dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5252c2f4119fdc5be9bc8827fb351374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#a5252c2f4119fdc5be9bc8827fb351374">moveY</a> (float y)</td></tr>
+<tr class="separator:a5252c2f4119fdc5be9bc8827fb351374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd83d678c0266dfc919bae6b6543495"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#adfd83d678c0266dfc919bae6b6543495">moveZ</a> (float z)</td></tr>
+<tr class="separator:adfd83d678c0266dfc919bae6b6543495"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -189,7 +201,7 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 <div class="textblock"><p><a class="el" href="classGameAsset.html" title="GameAsset Class. ">GameAsset</a> Class. </p>
 <p>The super class of all other objects in the game, containing vertex &amp; fragment shaders and the objects model. </p>
 
-<p>Definition at line <a class="el" href="GameAsset_8h_source.html#l00033">33</a> of file <a class="el" href="GameAsset_8h_source.html">GameAsset.h</a>.</p>
+<p>Definition at line <a class="el" href="GameAsset_8h_source.html#l00034">34</a> of file <a class="el" href="GameAsset_8h_source.html">GameAsset.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a612793ce2a354d2f8839a779d0ca2227"></a>
 <div class="memitem">
@@ -208,7 +220,7 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 <p>Collision method. </p>
 <p>Method to detect if this asset collides with given asset. </p>
 
-<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00031">31</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00033">33</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
 
 </div>
 </div>
@@ -234,7 +246,7 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 </div><div class="memdoc">
 <p>Returns this model as a list of <a class="el" href="classModelTriangle.html" title="ModelTriangle class. ">ModelTriangle</a> </p>
 
-<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00042">42</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00044">44</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
 
 </div>
 </div>
@@ -279,7 +291,7 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 <p>Create Buffers method. </p>
 <p>Creates this assets buffers. </p>
 
-<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00133">133</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00135">135</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
 
 </div>
 </div>
@@ -318,7 +330,7 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 <p>Create program method. </p>
 <p>Creates this assets shader program. </p>
 
-<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00169">169</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00171">171</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
 
 </div>
 </div>
@@ -347,7 +359,7 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 <p>Create shaders &amp; buffers method. </p>
 <p>Creates this assets buffers, shaders and shader program. </p>
 
-<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00191">191</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00193">193</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
 
 </div>
 </div>
@@ -386,7 +398,85 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 <p>Create Shaders method. </p>
 <p>Creates this assets shaders. </p>
 
-<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00145">145</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00147">147</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a3d6f67fb27e862458a02a7a7eb55dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameAsset::moveX </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Method to move object along x dimension by given amount. </p>
+
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00241">241</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5252c2f4119fdc5be9bc8827fb351374"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameAsset::moveY </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Method to move object along y dimension by given amount. </p>
+
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00245">245</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adfd83d678c0266dfc919bae6b6543495"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameAsset::moveZ </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Method to move object along z dimension by given amount. </p>
+
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00249">249</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4e2e9faf5cc690677549cbaf30ab80a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameAsset::setGAP </td>
+          <td>(</td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="classGAPlus.html">GAPlus</a> &gt;&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets <a class="el" href="classGAPlus.html" title="GAPlus Class. ">GAPlus</a> method. </p>
+<p>Method to change this classes <a class="el" href="classGAPlus.html" title="GAPlus Class. ">GAPlus</a>. </p>
+
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00231">231</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
 
 </div>
 </div>
@@ -425,7 +515,7 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 <p>Shader file reader. </p>
 <p>Reads this <a class="el" href="classGameAsset.html" title="GameAsset Class. ">GameAsset</a>'s shader file and returns it. </p>
 
-<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00113">113</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
+<p>Definition at line <a class="el" href="GameAsset_8cpp_source.html#l00115">115</a> of file <a class="el" href="GameAsset_8cpp_source.html">GameAsset.cpp</a>.</p>
 
 </div>
 </div>
@@ -436,7 +526,7 @@ shared_ptr&lt; <a class="el" href="classBoundingBox.html">BoundingBox</a> &gt;&#
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 1 2014 12:15:44 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 5 2014 14:42:09 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
