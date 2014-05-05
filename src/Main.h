@@ -24,6 +24,7 @@
 #include "Camera.h"
 #include "CuboidAsset.h"
 #include "LevelLoader.h"
+#include "Global.h"
 
 using namespace std;
 
@@ -60,5 +61,15 @@ using namespace std;
     	The method that updates the world due to things such as gravity.
   */
   void physics();
+  //! Collision Method
+  /*
+    	Checks if the two objects are viable for collision e.g. both aren't static.
+  */
+  bool getCol(shared_ptr<GameAsset> ob1, shared_ptr<GameAsset> ob2); 
+  //! Search Vector
+  /*
+    	Searches vector for a given Force.
+  */
+  bool seaVec(vector<Global::Force> v, Global::Force f);
 
 #endif

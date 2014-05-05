@@ -37,8 +37,8 @@ void display() {
   
 	for(auto i : assets) {
 	  for(auto j : assets) {
-	    if((i != j) && i->collidesWith(*j)) {
-
+	    if((i != j) && i->collidesWith(*j) && getCol(i, j)) {
+		//cout << "Collision between collisionables" <<endl;
 	    }
     	  }
   	}
@@ -49,6 +49,28 @@ void display() {
 	
   	// Don't forget to swap the buffers
   	SDL_GL_SwapWindow(window);
+}
+
+bool getCol(shared_ptr<GameAsset> ob1, shared_ptr<GameAsset> ob2) {
+	
+	if(seaVec(ob1->getGAP()->getFor(), Global::STAT) && seaVec(ob2->getGAP()->getFor(), Global::STAT)) {
+		return false;
+	}
+	cout << "Other collision." << endl;
+	return true;
+}
+
+bool seaVec(vector<Global::Force> v, Global::Force f) {
+	if(v.empty()) {
+		return false;
+	}
+
+	for(auto it : v) {
+		if(it == f) {
+			return true;
+		}
+	}
+	return false;
 }
 
 void physics() {
@@ -67,6 +89,12 @@ void gameLoop() {
 	float pi = 3.1415926;
 	float tAng = pi/256;
 	float tAngMem = 0;
+	shared_ptr<GameAsset> player;
+	for(auto pl : assets) {
+		if(pl->getGAP()->getTy() == 'P') {
+			player = pl; 
+		}
+	}
 
 	while (SDL_WaitEvent(&event)) {
 		switch (event.type) {
@@ -162,10 +190,24 @@ void gameLoop() {
 					z = 1 -x;
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
+				player->moveX(x);
+				for(auto j : assets) {
+	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
+						player->moveX(-x);
+						x = 0;
+	    				}
+    	  			}
+				
+				player->moveZ(z);
+				for(auto j : assets) {
+	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
+						player->moveZ(-z);
+						z = 0;
+	    				}
+    	  			}
 				thTemCam.setX(thTemCam.getX()+x);
 				thTemCam.setZ(thTemCam.getZ()+z);
 				Camera::getInstance().getCameraM().setCol3(thTemCam);
-
 				break;
 			  }
 			  case SDLK_s: {
@@ -193,6 +235,23 @@ void gameLoop() {
 					z = 1 -x;
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
+
+				player->moveX(-x);
+				for(auto j : assets) {
+	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
+						player->moveX(x);
+						x = 0;
+	    				}
+    	  			}
+				
+				player->moveZ(-z);
+				for(auto j : assets) {
+	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
+						player->moveZ(z);
+						z = 0;
+	    				}
+    	  			}
+
 				thTemCam.setX(thTemCam.getX()-x);
 				thTemCam.setZ(thTemCam.getZ()-z);
 				Camera::getInstance().getCameraM().setCol3(thTemCam);
@@ -225,10 +284,26 @@ void gameLoop() {
 					z = 1 -x; //Neg 0 -1
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
+
+				player->moveX(-x);
+				for(auto j : assets) {
+	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
+						player->moveX(x);
+						x = 0;
+	    				}
+    	  			}
+				
+				player->moveZ(-z);
+				for(auto j : assets) {
+	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
+						player->moveZ(z);
+						z = 0;
+	    				}
+    	  			}
+			
 				thTemCam.setX(thTemCam.getX()-x);
 				thTemCam.setZ(thTemCam.getZ()-z);
 				Camera::getInstance().getCameraM().setCol3(thTemCam);
-
 				break;
 			  }
 			  case SDLK_d: {
@@ -258,10 +333,26 @@ void gameLoop() {
 					z = 1 -x; //Neg 0 -1
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
+
+				player->moveX(x);
+				for(auto j : assets) {
+	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
+						player->moveX(-x);
+						x = 0;
+	    				}
+    	  			}
+				
+				player->moveZ(z);
+				for(auto j : assets) {
+	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
+						player->moveZ(-z);
+						z = 0;
+	    				}
+    	  			}
+
 				thTemCam.setX(thTemCam.getX()+x);
 				thTemCam.setZ(thTemCam.getZ()+z);
 				Camera::getInstance().getCameraM().setCol3(thTemCam);
-
 				break;
 			  }
 			  case SDLK_f: {
@@ -395,6 +486,7 @@ int main(int argc, char ** argv)
 	
 	LevelLoader temLev;
 	assets = temLev.getLevel(1);
+
 
 	gameLoop();
 	

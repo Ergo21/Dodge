@@ -19,6 +19,7 @@
 #include "BoundingBox.h"
 #include "ModelTriangle.h"
 #include "PolygonTest.h"
+#include "GAPlus.h"
 
 using namespace std;
 using namespace Vectormath::Aos;
@@ -41,9 +42,28 @@ public:
     		Method to detect if this asset collides with given asset.
   	*/
 	bool collidesWith(GameAsset & a);
+	//! Sets GAPlus method
+  	/*!
+    		Method to change this classes GAPlus.
+  	*/
+	void setGAP(shared_ptr<GAPlus> g);
+	shared_ptr<GAPlus> getGAP();
 
 	virtual void draw();
 	virtual void update()=0;
+
+	/*!
+    		Method to move object along x dimension by given amount.
+  	*/
+	void moveX(float x);
+	/*!
+    		Method to move object along y dimension by given amount.
+  	*/
+	void moveY(float y);
+	/*!
+    		Method to move object along z dimension by given amount.
+  	*/
+	void moveZ(float z);
 
 protected:
 	/* functions */
@@ -101,6 +121,7 @@ protected:
 	void common_init(); // because we don't have delegating constructors yet (http://gcc.gnu.org/projects/cxx0x.html)
 	string v_shader;
 	string f_shader;
+	shared_ptr<GAPlus> thiGAP;
 };
 
 #endif

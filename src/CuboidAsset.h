@@ -18,12 +18,16 @@
   */
 class CuboidAsset : public GameAsset {
  public:
-  CuboidAsset();
   //! Constructor Method
   /*!
     	x, y, z = Coords, sX, sY, sZ = dimensions
   */
   CuboidAsset(float x, float y, float z, float sX, float sY, float sZ);
+  //! Constructor Method with shaders
+  /*!
+    	Two extra parameters to customize shaders, vertex then fragment shader.
+  */
+  CuboidAsset(float x, float y, float z, float sX, float sY, float sZ, const string & v_shader, const string & f_shader);
   ~CuboidAsset();
   
   //! Update Method
@@ -39,6 +43,7 @@ class CuboidAsset : public GameAsset {
   //void setInterpolator(shared_ptr<IInterpolator> li);
  private:
   //shared_ptr<IInterpolator> li;
+	void buildObj(float x, float y, float z, float sX, float sY, float sZ);
 };
 
 #endif //  CUBOIDASSET_H

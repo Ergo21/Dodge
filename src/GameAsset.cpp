@@ -16,12 +16,14 @@ GameAsset::GameAsset() {
   common_init();
   this->v_shader = "shaders/hello-gl.v.glsl";
   this->f_shader = "shaders/hello-gl.f.glsl";
+  thiGAP = shared_ptr<GAPlus>(new GAPlus('0', vector<Global::Force>()));
 }
 
 GameAsset::GameAsset(const string & v_shader, const string & f_shader) {
   common_init();
   this->v_shader = v_shader;
   this->f_shader = f_shader;
+  thiGAP = shared_ptr<GAPlus>(new GAPlus('0', vector<Global::Force>()));
 }
 
 GameAsset::~GameAsset() {
@@ -225,3 +227,26 @@ int GameAsset::make_resources(void)
 
     return 1;
 }
+
+void GameAsset::setGAP(shared_ptr<GAPlus> g)
+{
+	thiGAP = g;
+}
+
+shared_ptr<GAPlus> GameAsset::getGAP()
+{
+	return thiGAP;
+}
+
+void GameAsset::moveX(float x) {
+	bbox->getCentre()->setX(bbox->getCentre()->getX() + x);
+}
+
+void GameAsset::moveY(float y) {
+	bbox->getCentre()->setY(bbox->getCentre()->getY() + y);
+}
+
+void GameAsset::moveZ(float z) {
+	bbox->getCentre()->setZ(bbox->getCentre()->getZ() + z);
+}
+

@@ -8,19 +8,46 @@
 
 #include "CuboidAsset.h"
 
-CuboidAsset::CuboidAsset() : GameAsset(
+CuboidAsset::CuboidAsset(float x, float y, float z, 
+					   float sX, float sY, float sZ) : GameAsset(
 									string("shaders/hello-gl.v.glsl")
 									, string("shaders/hello-gl.f.glsl")
 	      )
 {
-	CuboidAsset(0, 0, 0, 1, 1, 1); 
+	buildObj(x, y, z, sX, sY, sZ);
+
+	bbox.reset();
+	bbox = shared_ptr<BoundingBox>(new BoundingBox(Point3(x, y, z), sX, sY, sZ));
+
+	make_resources();
 }
 
-CuboidAsset::CuboidAsset(float x, float y, float z, 
-					   float sX, float sY, float sZ)
+CuboidAsset::CuboidAsset(float x, float y, float z, float sX, float sY, float sZ, const string & v_shader, const string & f_shader) : GameAsset(v_shader, f_shader)
 {
-	cout<< "CuboidAsset called"<<endl;
+	buildObj(x, y, z, sX, sY, sZ);
+	bbox.reset();
+	bbox = shared_ptr<BoundingBox>(new BoundingBox(Point3(x, y, z), sX, sY, sZ));
 
+	make_resources();
+}
+
+CuboidAsset::~CuboidAsset()
+{
+
+}
+
+void CuboidAsset::update()
+{
+
+}
+
+void CuboidAsset::draw()
+{
+	GameAsset::draw();
+}
+
+void CuboidAsset::buildObj(float x, float y, float z, float sX, float sY, float sZ)
+{
 	num_vertices = 8;
 	num_triangles = 12;
 	g_vertex_buffer_data = new GLfloat[num_vertices * 3];
@@ -105,26 +132,4 @@ CuboidAsset::CuboidAsset(float x, float y, float z,
 	g_element_buffer_data[33] = 4;
 	g_element_buffer_data[34] = 6;
 	g_element_buffer_data[35] = 7;
-
-	bbox.reset();
-	bbox = shared_ptr<BoundingBox>(new BoundingBox(Point3(x, y, z), sX, sY, sZ));
-
-	cout<< "CuboidAsset make resource"<<endl;
-	make_resources();
-	cout<< "CuboidAsset completed"<<endl;
-}
-
-CuboidAsset::~CuboidAsset()
-{
-
-}
-
-void CuboidAsset::update()
-{
-
-}
-
-void CuboidAsset::draw()
-{
-	GameAsset::draw();
 }

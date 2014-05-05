@@ -61,3 +61,5 @@ pair<float,float> BoundingBox::projectOntoAxis(const BoundingBox & b, enum AXIS 
 shared_ptr<Point3> BoundingBox::getCentre() {
   return c;
 }
+
+
