@@ -75,4 +75,6 @@ using namespace std;
   */
   bool seaVec(vector<Global::Force> v, Global::Force f);
 
+  bool movCol(shared_ptr<GameAsset> ob1, char d, float m);
+
 #endif

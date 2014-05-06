@@ -31,18 +31,25 @@ void display() {
   
 	// This O(n + n^2 + n) sequence of loops is written for clarity,
 	// not efficiency
-	for(auto it : ballAssets) {
-	  if(horrible_global_go) {it->update();}
-	}
   
 	for(auto i : ballAssets) {
+	  if(horrible_global_go) {
+		if(movCol(i, 'X', i->getGAP()->getMovX())) {
+			i->getGAP()->setMovX(-i->getGAP()->getMovX());
+		}
+		if(movCol(i, 'Y', i->getGAP()->getMovY())) {
+			i->getGAP()->setMovY(-i->getGAP()->getMovY());
+		}
+		if(movCol(i, 'Z', i->getGAP()->getMovZ())) {
+			i->getGAP()->setMovZ(-i->getGAP()->getMovZ());
+		}
+
+		i->update();
+	  }
+
 	  for(auto j : wallAssets) {
 	    if(getCol(i, j)) {
-		cout << "Collision between collisionables" <<endl;
-	    }
-
-	    if(getCol(player, j)) {
-		cout << "Collision" << endl;
+		//cout << "Between ball and wall" <<endl;
 	    }
     	  }
 
@@ -52,7 +59,7 @@ void display() {
 	    }
 
 	    if(getCol(player, j)) {
-		cout << "Collision" << endl;
+		//cout << "Collision" << endl;
 	    }
     	  }
 	  
@@ -66,9 +73,6 @@ void display() {
 		cout << "You died!" <<endl;
 		SDL_Event event;
 		event.type = SDL_QUIT;
-		//event.user.code = RUN_GRAPHICS_DISPLAY;
-		event.user.data1 = 0;
-		event.user.data2 = 0;
 		SDL_PushEvent(&event);
 	  }
   	}
@@ -97,6 +101,63 @@ bool getCol(shared_ptr<GameAsset> ob1, shared_ptr<GameAsset> ob2) {
 		return false;
 	}
 	return true;
+}
+
+bool movCol(shared_ptr<GameAsset> ob1, char d, float m) {
+	if(d == 'X') {
+		ob1->moveX(m);
+		for(auto it : wallAssets) {
+			if(getCol(ob1, it)) {
+				ob1->moveX(-m);
+				return true;
+			}
+		}
+		for(auto it : ballAssets) {
+			if(it != ob1 && getCol(ob1, it)) {
+				ob1->moveX(-m);
+				it->getGAP()->setMovX(-it->getGAP()->getMovX());
+				return true;
+			}
+		}
+		ob1->moveX(-m);
+	} 
+	else if(d == 'Y') {
+		ob1->moveY(m);
+		for(auto it : wallAssets) {
+			if(getCol(ob1, it)) {
+				ob1->moveY(-m);
+				return true;
+			}
+		}
+		for(auto it : ballAssets) {
+			if(it != ob1 && getCol(ob1, it)) {
+				ob1->moveY(-m);
+				it->getGAP()->setMovY(-it->getGAP()->getMovY());
+				return true;
+			}
+		}
+		
+		ob1->moveY(-m);
+	}
+	else if(d == 'Z') {
+		ob1->moveZ(m);
+		for(auto it : wallAssets) {
+			if(getCol(ob1, it)) {
+				ob1->moveZ(-m);
+				return true;
+			}
+		}
+		for(auto it : ballAssets) {
+			if(it != ob1 && getCol(ob1, it)) {
+				ob1->moveZ(-m);
+				it->getGAP()->setMovZ(-it->getGAP()->getMovZ());
+				return true;
+			}
+		}
+		ob1->moveZ(-m);
+	}
+
+	return false;
 }
 
 bool seaVec(vector<Global::Force> v, Global::Force f) {
@@ -227,21 +288,19 @@ void gameLoop() {
 					z = 1 -x;
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
-				player->moveX(x);
-				for(auto j : wallAssets) {
-	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
-						player->moveX(-x);
-						x = 0;
-	    				}
-    	  			}
+				if(movCol(player, 'X', x)) {
+					x = 0;
+				}
+				else {
+					player->moveX(x);
+				}
 				
-				player->moveZ(z);
-				for(auto j : wallAssets) {
-	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
-						player->moveZ(-z);
-						z = 0;
-	    				}
-    	  			}
+				if(movCol(player, 'Z', z)) {
+					z = 0;
+				}
+				else {
+					player->moveZ(z);
+				}
 				thTemCam.setX(thTemCam.getX()+x);
 				thTemCam.setZ(thTemCam.getZ()+z);
 				Camera::getInstance().getCameraM().setCol3(thTemCam);
@@ -273,21 +332,19 @@ void gameLoop() {
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
 
-				player->moveX(-x);
-				for(auto j : wallAssets) {
-	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
-						player->moveX(x);
-						x = 0;
-	    				}
-    	  			}
+				if(movCol(player, 'X', -x)) {
+					x = 0;
+				}
+				else {
+					player->moveX(-x);
+				}
 				
-				player->moveZ(-z);
-				for(auto j : wallAssets) {
-	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
-						player->moveZ(z);
-						z = 0;
-	    				}
-    	  			}
+				if(movCol(player, 'Z', -z)) {
+					z = 0;
+				}
+				else {
+					player->moveZ(-z);
+				}
 
 				thTemCam.setX(thTemCam.getX()-x);
 				thTemCam.setZ(thTemCam.getZ()-z);
@@ -322,21 +379,19 @@ void gameLoop() {
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
 
-				player->moveX(-x);
-				for(auto j : wallAssets) {
-	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
-						player->moveX(x);
-						x = 0;
-	    				}
-    	  			}
+				if(movCol(player, 'X', -x)) {
+					x = 0;
+				}
+				else {
+					player->moveX(-x);
+				}
 				
-				player->moveZ(-z);
-				for(auto j : wallAssets) {
-	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
-						player->moveZ(z);
-						z = 0;
-	    				}
-    	  			}
+				if(movCol(player, 'Z', -z)) {
+					z = 0;
+				}
+				else {
+					player->moveZ(-z);
+				}
 			
 				thTemCam.setX(thTemCam.getX()-x);
 				thTemCam.setZ(thTemCam.getZ()-z);
@@ -371,21 +426,19 @@ void gameLoop() {
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
 
-				player->moveX(x);
-				for(auto j : wallAssets) {
-	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
-						player->moveX(-x);
-						x = 0;
-	    				}
-    	  			}
+				if(movCol(player, 'X', x)) {
+					x = 0;
+				}
+				else {
+					player->moveX(x);
+				}
 				
-				player->moveZ(z);
-				for(auto j : wallAssets) {
-	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
-						player->moveZ(-z);
-						z = 0;
-	    				}
-    	  			}
+				if(movCol(player, 'Z', z)) {
+					z = 0;
+				}
+				else {
+					player->moveZ(z);
+				}
 
 				thTemCam.setX(thTemCam.getX()+x);
 				thTemCam.setZ(thTemCam.getZ()+z);

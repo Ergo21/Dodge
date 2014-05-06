@@ -31,6 +31,7 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 	string bluFShad = "shaders/bluF.glsl";
 	string fraShade = "shaders/hello-gl.f.glsl";
 	vector<Global::Force> forces; 
+	srand ( time(NULL) );
 
 	for(int i = 0; i < level0Str.size(); i++)
 	{
@@ -62,7 +63,7 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 					forces.push_back(Global::STAT);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('F', forces)));
 					forces.clear();
-					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, 0, i, 1, 1, 1)));
+					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, 0, i, 0.75, 0.75, 0.75)));
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::DYNA);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('P', forces)));
@@ -84,7 +85,19 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::DYNA);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('B', forces)));
-					level0.back()->getGAP()->setMovX(0.1);
+					if(rand() % 2 == 1) {
+						level0.back()->getGAP()->setMovX(0.05);
+					}
+					else {
+						level0.back()->getGAP()->setMovX(-0.05);
+					}
+					if(rand() % 2 == 1) {
+						level0.back()->getGAP()->setMovZ(0.05);
+					}
+					else {
+						level0.back()->getGAP()->setMovZ(-0.05);
+					}
+					
 					break;
 				}
 			}
