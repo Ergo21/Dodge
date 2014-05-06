@@ -296,8 +296,8 @@ void gameLoop() {
 				}
 				else
 				{
-					x = 1-tAngMem/(pi/2); //Pos 1 0
-					z = 1 -x; //Neg 0 -1
+					x = 1+tAngMem/(pi/2); //Pos 1 0
+					z = x-1; //Neg 0 -1
 					cout<< "X: " << x << " Z: " << z <<endl;
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
@@ -346,8 +346,8 @@ void gameLoop() {
 				}
 				else
 				{
-					x = 1-tAngMem/(pi/2); //Pos 1 0
-					z = 1 -x; //Neg 0 -1
+					x = 1+tAngMem/(pi/2); //Pos 1 0
+					z = x-1; //Neg 0 -1
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
 
