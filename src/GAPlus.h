@@ -35,10 +35,18 @@ public:
     		List of forces this Asset is subject to.
   	*/
 	vector<Global::Force> getFor();
-
+	float getMovX();
+	float getMovY();
+	float getMovZ();
+	void setMovX(float x);
+	void setMovY(float y);
+	void setMovZ(float z);
 private:
 	char thiType;
 	vector<Global::Force> thiFor; //List of forces by number 0 = Collisionable, 1 = Gravity
+	float movX;
+	float movY;	
+	float movZ;
 };
 
 #endif

@@ -38,7 +38,10 @@ using namespace std;
   int main(int argc, char ** argv);
 
   bool horrible_global_go = false;
-  vector<shared_ptr<GameAsset> > assets; //All world objects
+  vector<shared_ptr<GameAsset> > wallAssets; //All wall objects
+  vector<shared_ptr<GameAsset> > florAssets; //All floor objects
+  vector<shared_ptr<GameAsset> > ballAssets; //All ball objects
+  shared_ptr<GameAsset> player; //Player asset, assumes 1 plaayer
   SDL_Window * window = nullptr;
 
   //! Timing Method

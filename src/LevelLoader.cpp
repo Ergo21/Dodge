@@ -62,7 +62,7 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 					forces.push_back(Global::STAT);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('F', forces)));
 					forces.clear();
-					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, 0, i, 0.1, 0.1, 0.1)));
+					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, 0, i, 1, 1, 1)));
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::DYNA);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('P', forces)));
@@ -84,6 +84,7 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::DYNA);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('B', forces)));
+					level0.back()->getGAP()->setMovX(0.1);
 					break;
 				}
 			}

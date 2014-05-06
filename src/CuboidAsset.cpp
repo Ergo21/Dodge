@@ -38,7 +38,9 @@ CuboidAsset::~CuboidAsset()
 
 void CuboidAsset::update()
 {
-
+	moveX(getGAP()->getMovX());
+	moveY(getGAP()->getMovY());
+	moveZ(getGAP()->getMovZ());
 }
 
 void CuboidAsset::draw()

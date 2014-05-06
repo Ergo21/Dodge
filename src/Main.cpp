@@ -31,20 +31,28 @@ void display() {
   
 	// This O(n + n^2 + n) sequence of loops is written for clarity,
 	// not efficiency
-	//for(auto it : assets) {
-	//  if(horrible_global_go) {it->update();}
-	//}
+	for(auto it : ballAssets) {
+	  if(horrible_global_go) {it->update();}
+	}
   
 	for(auto i : ballAssets) {
 	  for(auto j : wallAssets) {
 	    if(getCol(i, j)) {
-		//cout << "Collision between collisionables" <<endl;
+		cout << "Collision between collisionables" <<endl;
+	    }
+
+	    if(getCol(player, j)) {
+		cout << "Collision" << endl;
 	    }
     	  }
 
 	  for(auto j : florAssets) {
 	    if(getCol(i, j)) {
 		//cout << "Collision between collisionables" <<endl;
+	    }
+
+	    if(getCol(player, j)) {
+		cout << "Collision" << endl;
 	    }
     	  }
 	  
@@ -55,7 +63,13 @@ void display() {
     	  }
 
 	  if(getCol(i, player)) {
-
+		cout << "You died!" <<endl;
+		SDL_Event event;
+		event.type = SDL_QUIT;
+		//event.user.code = RUN_GRAPHICS_DISPLAY;
+		event.user.data1 = 0;
+		event.user.data2 = 0;
+		SDL_PushEvent(&event);
 	  }
   	}
 
