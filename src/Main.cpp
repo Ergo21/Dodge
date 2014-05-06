@@ -31,34 +31,44 @@ void display() {
   
 	// This O(n + n^2 + n) sequence of loops is written for clarity,
 	// not efficiency
-	for(auto it : assets) {
-	  if(horrible_global_go) {it->update();}
-	}
+	//for(auto it : assets) {
+	//  if(horrible_global_go) {it->update();}
+	//}
   
-	for(auto i : assets) {
-	  for(auto j : assets) {
-	    if((i != j) && i->collidesWith(*j) && getCol(i, j)) {
+	for(auto i : ballAssets) {
+	  for(auto j : wallAssets) {
+	    if(getCol(i, j)) {
 		//cout << "Collision between collisionables" <<endl;
 	    }
     	  }
+
+	  for(auto j : florAssets) {
+	    if(getCol(i, j)) {
+		//cout << "Collision between collisionables" <<endl;
+	    }
+    	  }
+	  
+	  for(auto j : ballAssets) {
+	    if((i != j) && getCol(i, j)) {
+		//cout << "Collision between collisionables" <<endl;
+	    }
+    	  }
+
+	  if(getCol(i, player)) {
+
+	  }
   	}
 
-  	for(auto it : assets) {
-		if(it->getGAP()->getTy() == 'W') {
-			it->draw();
-		}
+  	for(auto it : wallAssets) {
+		it->draw();
   	}
 
-	for(auto it : assets) {
-		if(it->getGAP()->getTy() == 'F') {
-			it->draw();
-		}
+	for(auto it : florAssets) {
+		it->draw();
   	}
 	
-	for(auto it : assets) {
-		if(it->getGAP()->getTy() == 'B') {
-			it->draw();
-		}
+	for(auto it : ballAssets) {
+		it->draw();
   	}
 
 	
@@ -69,10 +79,9 @@ void display() {
 
 bool getCol(shared_ptr<GameAsset> ob1, shared_ptr<GameAsset> ob2) {
 	
-	if(seaVec(ob1->getGAP()->getFor(), Global::STAT) && seaVec(ob2->getGAP()->getFor(), Global::STAT)) {
+	if(!ob1->collidesWith(*ob2)) {
 		return false;
 	}
-	cout << "Other collision." << endl;
 	return true;
 }
 
@@ -88,6 +97,10 @@ bool seaVec(vector<Global::Force> v, Global::Force f) {
 	}
 	return false;
 }
+
+//bool contains(vector<shared_ptr<GameAsset> > vect, shared_ptr<GameAsset> obj) {
+//	return std::find(vect.begin(), vect.end(), *obj) != vect.end();
+//}
 
 void physics() {
 
@@ -105,12 +118,6 @@ void gameLoop() {
 	float pi = 3.1415926;
 	float tAng = pi/256;
 	float tAngMem = 0;
-	shared_ptr<GameAsset> player;
-	for(auto pl : assets) {
-		if(pl->getGAP()->getTy() == 'P') {
-			player = pl; 
-		}
-	}
 
 	while (SDL_WaitEvent(&event)) {
 		switch (event.type) {
@@ -138,14 +145,14 @@ void gameLoop() {
 					tAngMem -= tAng;
 				}
 
-				/*if(event.motion.yrel > 5)	//Bugs when used for too long
-				{
-					Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng, locRig)));
-				}
-				else if(event.motion.yrel < -5)
-				{				
-					Camera::getInstance().setCamera((camera * Matrix4::rotation(tAng, locRig)));
-				}*/
+				//if(event.motion.yrel > 5)	//Bugs when used for too long
+				//{
+				//	Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng, locRig)));
+				//}
+				//else if(event.motion.yrel < -5)
+				//{				
+				//	Camera::getInstance().setCamera((camera * Matrix4::rotation(tAng, locRig)));
+				//}
 				
 				if(tAngMem >= 3.1415926)
 				{
@@ -207,7 +214,7 @@ void gameLoop() {
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
 				player->moveX(x);
-				for(auto j : assets) {
+				for(auto j : wallAssets) {
 	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
 						player->moveX(-x);
 						x = 0;
@@ -215,7 +222,7 @@ void gameLoop() {
     	  			}
 				
 				player->moveZ(z);
-				for(auto j : assets) {
+				for(auto j : wallAssets) {
 	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
 						player->moveZ(-z);
 						z = 0;
@@ -253,7 +260,7 @@ void gameLoop() {
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
 
 				player->moveX(-x);
-				for(auto j : assets) {
+				for(auto j : wallAssets) {
 	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
 						player->moveX(x);
 						x = 0;
@@ -261,7 +268,7 @@ void gameLoop() {
     	  			}
 				
 				player->moveZ(-z);
-				for(auto j : assets) {
+				for(auto j : wallAssets) {
 	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
 						player->moveZ(z);
 						z = 0;
@@ -298,12 +305,11 @@ void gameLoop() {
 				{
 					x = 1+tAngMem/(pi/2); //Pos 1 0
 					z = x-1; //Neg 0 -1
-					cout<< "X: " << x << " Z: " << z <<endl;
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
 
 				player->moveX(-x);
-				for(auto j : assets) {
+				for(auto j : wallAssets) {
 	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
 						player->moveX(x);
 						x = 0;
@@ -311,7 +317,7 @@ void gameLoop() {
     	  			}
 				
 				player->moveZ(-z);
-				for(auto j : assets) {
+				for(auto j : wallAssets) {
 	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
 						player->moveZ(z);
 						z = 0;
@@ -352,7 +358,7 @@ void gameLoop() {
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
 
 				player->moveX(x);
-				for(auto j : assets) {
+				for(auto j : wallAssets) {
 	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
 						player->moveX(-x);
 						x = 0;
@@ -360,7 +366,7 @@ void gameLoop() {
     	  			}
 				
 				player->moveZ(z);
-				for(auto j : assets) {
+				for(auto j : wallAssets) {
 	    				if((player != j) && player->collidesWith(*j) && getCol(player, j)) {
 						player->moveZ(-z);
 						z = 0;
@@ -452,6 +458,7 @@ void gameLoop() {
 			  }
 			  break;
 			}
+
 	}
 }
 
@@ -495,15 +502,37 @@ int main(int argc, char ** argv)
 	
 	// Call the function "display" every delay milliseconds
 	SDL_AddTimer(delay, display, NULL);
-	SDL_SetRelativeMouseMode(SDL_TRUE);
+	//SDL_SetRelativeMouseMode(SDL_TRUE);
 
 	/*assets.push_back(shared_ptr<TriangularPyramidAsset> (new TriangularPyramidAsset(10, 0, 0)));
 
 	assets.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(-2, 0, 0, 1, 2, 1)));*/
 	
 	LevelLoader temLev;
-	assets = temLev.getLevel(1);
+	vector<shared_ptr<GameAsset>> assets = temLev.getLevel(1);
+	
+	for(auto in : assets) {
+		switch(in->getGAP()->getTy()) {
+			case 'W': {
+				wallAssets.push_back(in);
+				break;
+			}
+			case 'F': {
+				florAssets.push_back(in);
+				break;
+			}
+			case 'B': {
+				ballAssets.push_back(in);
+				break;
+			}
+			case 'P': {
+				player = in;
+				break;
+			}
+			
+		}
 
+	}
 
 	gameLoop();
 	
