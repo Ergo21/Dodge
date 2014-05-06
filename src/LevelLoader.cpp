@@ -24,8 +24,6 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 {
 	level0.clear();
 
-	cout << level0.size() << endl;
-
 	string verShade = "shaders/hello-gl.v.glsl";
 	string redFShad = "shaders/redF.glsl";
 	string bluFShad = "shaders/bluF.glsl";
@@ -86,16 +84,16 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 					forces.push_back(Global::DYNA);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('B', forces)));
 					if(rand() % 2 == 1) {
-						level0.back()->getGAP()->setMovX(0.05);
+						level0.back()->getGAP()->setMovX(0.1);
 					}
 					else {
-						level0.back()->getGAP()->setMovX(-0.05);
+						level0.back()->getGAP()->setMovX(-0.1);
 					}
 					if(rand() % 2 == 1) {
-						level0.back()->getGAP()->setMovZ(0.05);
+						level0.back()->getGAP()->setMovZ(0.1);
 					}
 					else {
-						level0.back()->getGAP()->setMovZ(-0.05);
+						level0.back()->getGAP()->setMovZ(-0.1);
 					}
 					
 					break;

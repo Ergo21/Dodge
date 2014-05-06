@@ -16,6 +16,7 @@
 #include <fstream>
 #include <vector>
 #include <memory>
+#include <ctime>
 
 #include "GameAsset.h"
 #include "Md2Asset.h"
@@ -74,7 +75,12 @@ using namespace std;
     	Searches vector for a given Force.
   */
   bool seaVec(vector<Global::Force> v, Global::Force f);
-
+  //! Movement collision
+  /*
+    	Checks if a movement in a particular direction will cause a collision.
+  */
   bool movCol(shared_ptr<GameAsset> ob1, char d, float m);
+
+  time_t starTime;  
 
 #endif

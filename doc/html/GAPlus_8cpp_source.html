@@ -100,29 +100,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    thiType = t;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    thiFor = f;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;GAPlus::~GAPlus()</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classGAPlus.html#aadfbeaa73754fc498542ee0faa879912">   20</a></span>&#160;<span class="keywordtype">char</span> <a class="code" href="classGAPlus.html#aadfbeaa73754fc498542ee0faa879912">GAPlus::getTy</a>()</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> thiType;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classGAPlus.html#a424b0920996c254e25f95f03d553d7d7">   25</a></span>&#160;vector&lt;Global::Force&gt; <a class="code" href="classGAPlus.html#a424b0920996c254e25f95f03d553d7d7">GAPlus::getFor</a>()</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> thiFor;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="ttc" id="classGAPlus_html_a424b0920996c254e25f95f03d553d7d7"><div class="ttname"><a href="classGAPlus.html#a424b0920996c254e25f95f03d553d7d7">GAPlus::getFor</a></div><div class="ttdeci">vector&lt; Global::Force &gt; getFor()</div><div class="ttdoc">Get list of forces method. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00025">GAPlus.cpp:25</a></div></div>
-<div class="ttc" id="classGAPlus_html_aadfbeaa73754fc498542ee0faa879912"><div class="ttname"><a href="classGAPlus.html#aadfbeaa73754fc498542ee0faa879912">GAPlus::getTy</a></div><div class="ttdeci">char getTy()</div><div class="ttdoc">Get type method. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00020">GAPlus.cpp:20</a></div></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    movX = 0;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    movY = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    movZ = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;GAPlus::~GAPlus()</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classGAPlus.html#aadfbeaa73754fc498542ee0faa879912">   23</a></span>&#160;<span class="keywordtype">char</span> <a class="code" href="classGAPlus.html#aadfbeaa73754fc498542ee0faa879912">GAPlus::getTy</a>()</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> thiType;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classGAPlus.html#a424b0920996c254e25f95f03d553d7d7">   28</a></span>&#160;vector&lt;Global::Force&gt; <a class="code" href="classGAPlus.html#a424b0920996c254e25f95f03d553d7d7">GAPlus::getFor</a>()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> thiFor;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classGAPlus.html#a9743f921683de213d9f66abffd6970c3">   33</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="classGAPlus.html#a9743f921683de213d9f66abffd6970c3">GAPlus::getMovX</a>() {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> movX;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classGAPlus.html#acffcea1f1028eec9ed47c71c6830ef87">   37</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="classGAPlus.html#acffcea1f1028eec9ed47c71c6830ef87">GAPlus::getMovY</a>() {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> movY;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classGAPlus.html#abaa790b578ae3f93c341f1d3badaa5ed">   41</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="classGAPlus.html#abaa790b578ae3f93c341f1d3badaa5ed">GAPlus::getMovZ</a>() {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> movZ;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classGAPlus.html#a2e58d254ad8a5b25d9de8fdaab3ab4b7">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGAPlus.html#a2e58d254ad8a5b25d9de8fdaab3ab4b7">GAPlus::setMovX</a>(<span class="keywordtype">float</span> x) </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    movX = x;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classGAPlus.html#a742b62c8fb4cbc9644c396226448f7e8">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGAPlus.html#a742b62c8fb4cbc9644c396226448f7e8">GAPlus::setMovY</a>(<span class="keywordtype">float</span> y) </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    movY = y;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classGAPlus.html#aec3ef9cf7ffbaeeee2c9837e5734a880">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGAPlus.html#aec3ef9cf7ffbaeeee2c9837e5734a880">GAPlus::setMovZ</a>(<span class="keywordtype">float</span> z) </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    movZ = z;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="ttc" id="classGAPlus_html_aec3ef9cf7ffbaeeee2c9837e5734a880"><div class="ttname"><a href="classGAPlus.html#aec3ef9cf7ffbaeeee2c9837e5734a880">GAPlus::setMovZ</a></div><div class="ttdeci">void setMovZ(float z)</div><div class="ttdoc">Set movement value along Z axis. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00055">GAPlus.cpp:55</a></div></div>
+<div class="ttc" id="classGAPlus_html_a742b62c8fb4cbc9644c396226448f7e8"><div class="ttname"><a href="classGAPlus.html#a742b62c8fb4cbc9644c396226448f7e8">GAPlus::setMovY</a></div><div class="ttdeci">void setMovY(float y)</div><div class="ttdoc">Set movement value along Y axis. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00050">GAPlus.cpp:50</a></div></div>
+<div class="ttc" id="classGAPlus_html_a424b0920996c254e25f95f03d553d7d7"><div class="ttname"><a href="classGAPlus.html#a424b0920996c254e25f95f03d553d7d7">GAPlus::getFor</a></div><div class="ttdeci">vector&lt; Global::Force &gt; getFor()</div><div class="ttdoc">Get list of forces method. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00028">GAPlus.cpp:28</a></div></div>
+<div class="ttc" id="classGAPlus_html_a2e58d254ad8a5b25d9de8fdaab3ab4b7"><div class="ttname"><a href="classGAPlus.html#a2e58d254ad8a5b25d9de8fdaab3ab4b7">GAPlus::setMovX</a></div><div class="ttdeci">void setMovX(float x)</div><div class="ttdoc">Set movement value along X axis. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00045">GAPlus.cpp:45</a></div></div>
+<div class="ttc" id="classGAPlus_html_a9743f921683de213d9f66abffd6970c3"><div class="ttname"><a href="classGAPlus.html#a9743f921683de213d9f66abffd6970c3">GAPlus::getMovX</a></div><div class="ttdeci">float getMovX()</div><div class="ttdoc">Get movement value along X axis. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00033">GAPlus.cpp:33</a></div></div>
+<div class="ttc" id="classGAPlus_html_abaa790b578ae3f93c341f1d3badaa5ed"><div class="ttname"><a href="classGAPlus.html#abaa790b578ae3f93c341f1d3badaa5ed">GAPlus::getMovZ</a></div><div class="ttdeci">float getMovZ()</div><div class="ttdoc">Get movement value along Z axis. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00041">GAPlus.cpp:41</a></div></div>
+<div class="ttc" id="classGAPlus_html_aadfbeaa73754fc498542ee0faa879912"><div class="ttname"><a href="classGAPlus.html#aadfbeaa73754fc498542ee0faa879912">GAPlus::getTy</a></div><div class="ttdeci">char getTy()</div><div class="ttdoc">Get type method. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00023">GAPlus.cpp:23</a></div></div>
+<div class="ttc" id="classGAPlus_html_acffcea1f1028eec9ed47c71c6830ef87"><div class="ttname"><a href="classGAPlus.html#acffcea1f1028eec9ed47c71c6830ef87">GAPlus::getMovY</a></div><div class="ttdeci">float getMovY()</div><div class="ttdoc">Get movement value along Y axis. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00037">GAPlus.cpp:37</a></div></div>
 <div class="ttc" id="classGAPlus_html_ac6953ed1932735d5f916b24f1298f3ab"><div class="ttname"><a href="classGAPlus.html#ac6953ed1932735d5f916b24f1298f3ab">GAPlus::GAPlus</a></div><div class="ttdeci">GAPlus(char t, vector&lt; Global::Force &gt; f)</div><div class="ttdoc">GAPlus Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="GAPlus_8cpp_source.html#l00010">GAPlus.cpp:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 5 2014 14:42:04 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 6 2014 13:59:50 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

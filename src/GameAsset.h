@@ -47,6 +47,7 @@ public:
     		Method to change this classes GAPlus.
   	*/
 	void setGAP(shared_ptr<GAPlus> g);
+	//! Gets GAPlus method
 	shared_ptr<GAPlus> getGAP();
 
 	virtual void draw();

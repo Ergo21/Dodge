@@ -35,11 +35,17 @@ public:
     		List of forces this Asset is subject to.
   	*/
 	vector<Global::Force> getFor();
+	//! Get movement value along X axis
 	float getMovX();
+	//! Get movement value along Y axis
 	float getMovY();
+	//! Get movement value along Z axis
 	float getMovZ();
+	//! Set movement value along X axis
 	void setMovX(float x);
+	//! Set movement value along Y axis
 	void setMovY(float y);
+	//! Set movement value along Z axis
 	void setMovZ(float z);
 private:
 	char thiType;

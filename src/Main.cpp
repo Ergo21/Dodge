@@ -69,8 +69,11 @@ void display() {
 	    }
     	  }
 
-	  if(getCol(i, player)) {
-		cout << "You died!" <<endl;
+	  if(getCol(i, player)) {	
+		time_t endTime;
+		time(&endTime);
+		cout << "You survived: " << difftime(endTime, starTime) << " seconds" << endl;
+		cout << "And then you died!" <<endl;
 		SDL_Event event;
 		event.type = SDL_QUIT;
 		SDL_PushEvent(&event);
@@ -471,6 +474,7 @@ void gameLoop() {
 			    	break;
 			  }
 			  case SDLK_g: {
+				if(!horrible_global_go) { time(&starTime);};
 			    	horrible_global_go = true;
 			    	break;
 			  }

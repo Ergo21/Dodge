@@ -32,7 +32,7 @@ class CuboidAsset : public GameAsset {
   
   //! Update Method
   /*!
-    	Updates the asset using the interpolator.
+    	Updates the asset using the GAPlus movement values.
   */
   virtual void update();
   //! Draw Method
