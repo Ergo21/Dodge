@@ -44,8 +44,24 @@ void display() {
   	}
 
   	for(auto it : assets) {
-    	  it->draw();
+		if(it->getGAP()->getTy() == 'W') {
+			it->draw();
+		}
   	}
+
+	for(auto it : assets) {
+		if(it->getGAP()->getTy() == 'F') {
+			it->draw();
+		}
+  	}
+	
+	for(auto it : assets) {
+		if(it->getGAP()->getTy() == 'B') {
+			it->draw();
+		}
+  	}
+
+	
 	
   	// Don't forget to swap the buffers
   	SDL_GL_SwapWindow(window);
@@ -282,6 +298,7 @@ void gameLoop() {
 				{
 					x = 1-tAngMem/(pi/2); //Pos 1 0
 					z = 1 -x; //Neg 0 -1
+					cout<< "X: " << x << " Z: " << z <<endl;
 				}
 				Vector4 thTemCam = Camera::getInstance().getCameraM().getCol3();
 
