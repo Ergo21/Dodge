@@ -41,9 +41,6 @@
   <error id="unusedFunction" severity="style" msg="The function 'getCollision' is never used." verbose="The function 'getCollision' is never used.">
     <location file="src/PolygonTest.cpp" line="10"/>
   </error>
-  <error id="unusedFunction" severity="style" msg="The function 'physics' is never used." verbose="The function 'physics' is never used.">
-    <location file="src/Main.cpp" line="183"/>
-  </error>
   <error id="unusedFunction" severity="style" msg="The function 'seaVec' is never used." verbose="The function 'seaVec' is never used.">
     <location file="src/Main.cpp" line="166"/>
   </error>

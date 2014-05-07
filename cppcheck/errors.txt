@@ -11,6 +11,5 @@
 [src/Md2Asset.cpp:90]: (style) C-style pointer casting
 [src/TriangularPyramidAsset.cpp:17]: (error) Instance of 'TriangularPyramidAsset' object is destroyed immediately.
 [src/PolygonTest.cpp:10]: (style) The function 'getCollision' is never used.
-[src/Main.cpp:183]: (style) The function 'physics' is never used.
 [src/Main.cpp:166]: (style) The function 'seaVec' is never used.
 (information) Cppcheck cannot find all the include files (use --check-config for details)

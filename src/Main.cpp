@@ -176,14 +176,6 @@ bool seaVec(vector<Global::Force> v, Global::Force f) {
 	return false;
 }
 
-//bool contains(vector<shared_ptr<GameAsset> > vect, shared_ptr<GameAsset> obj) {
-//	return std::find(vect.begin(), vect.end(), *obj) != vect.end();
-//}
-
-void physics() {
-
-}
-
 void gameLoop() {
 	// Add the main event loop
 	SDL_Event event;

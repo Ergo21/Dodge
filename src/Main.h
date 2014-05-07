@@ -60,11 +60,6 @@ using namespace std;
     	The games main loop that handles user input, calls physics & display methods
   */
   void gameLoop();
-  //! The world update Method
-  /*
-    	The method that updates the world due to things such as gravity.
-  */
-  void physics();
   //! Collision Method
   /*
     	Checks if the two objects are viable for collision e.g. both aren't static.
