@@ -2,12 +2,6 @@
 <results version="2">
   <cppcheck version="1.61"/>
   <errors>
-  <error id="operatorEqVarError" severity="warning" msg="Member variable 'Camera::camera' is not assigned a value in 'Camera::operator='." verbose="Member variable 'Camera::camera' is not assigned a value in 'Camera::operator='.">
-    <location file="src/Camera.h" line="60"/>
-  </error>
-  <error id="operatorEqRetRefThis" severity="style" msg="'operator=' should return reference to 'this' instance." verbose="'operator=' should return reference to 'this' instance.">
-    <location file="src/Camera.h" line="60"/>
-  </error>
   <error id="useInitializationList" severity="performance" msg="Variable 'thiFor' is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don't explicitly write them to the initialization list. You could avoid assigning 'thiFor' a value by passing the value to the constructor in the initialization list.">
     <location file="src/GAPlus.cpp" line="13"/>
   </error>

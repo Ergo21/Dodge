@@ -57,7 +57,6 @@ private:
 	/*!
 	    Not implemented.
 	*/
-	Camera& operator=(Camera const& c){};
 	static Camera * c;
 	Matrix4 * camera;
 };

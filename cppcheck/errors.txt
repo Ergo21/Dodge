@@ -1,5 +1,3 @@
-[src/Camera.h:60]: (warning) Member variable 'Camera::camera' is not assigned a value in 'Camera::operator='.
-[src/Camera.h:60]: (style) 'operator=' should return reference to 'this' instance.
 [src/GAPlus.cpp:13]: (performance) Variable 'thiFor' is assigned in constructor body. Consider performing initialization in initialization list.
 [src/GameAsset.cpp:15]: (warning) Member variable 'GameAsset::g_vertex_buffer_data' is not initialized in the constructor.
 [src/GameAsset.cpp:15]: (warning) Member variable 'GameAsset::g_element_buffer_data' is not initialized in the constructor.
