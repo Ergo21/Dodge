@@ -29,9 +29,6 @@
   <error id="uninitMemberVar" severity="warning" msg="Member variable 'GameAsset::num_triangles' is not initialized in the constructor." verbose="Member variable 'GameAsset::num_triangles' is not initialized in the constructor.">
     <location file="src/GameAsset.cpp" line="22"/>
   </error>
-  <error id="unreadVariable" severity="style" msg="Variable 'fraShade' is assigned a value that is never used." verbose="Variable 'fraShade' is assigned a value that is never used.">
-    <location file="src/LevelLoader.cpp" line="30"/>
-  </error>
   <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
     <location file="src/Md2Asset.cpp" line="54"/>
   </error>

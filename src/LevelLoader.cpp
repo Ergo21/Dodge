@@ -27,7 +27,7 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 	string verShade = "shaders/hello-gl.v.glsl";
 	string redFShad = "shaders/redF.glsl";
 	string bluFShad = "shaders/bluF.glsl";
-	string fraShade = "shaders/hello-gl.f.glsl";
+
 	vector<Global::Force> forces; 
 	srand ( time(NULL) );
 

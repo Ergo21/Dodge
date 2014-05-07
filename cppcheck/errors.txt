@@ -7,7 +7,6 @@
 [src/GameAsset.cpp:22]: (warning) Member variable 'GameAsset::g_element_buffer_data' is not initialized in the constructor.
 [src/GameAsset.cpp:22]: (warning) Member variable 'GameAsset::num_vertices' is not initialized in the constructor.
 [src/GameAsset.cpp:22]: (warning) Member variable 'GameAsset::num_triangles' is not initialized in the constructor.
-[src/LevelLoader.cpp:30]: (style) Variable 'fraShade' is assigned a value that is never used.
 [src/Md2Asset.cpp:54]: (style) C-style pointer casting
 [src/Md2Asset.cpp:90]: (style) C-style pointer casting
 [src/TriangularPyramidAsset.cpp:17]: (error) Instance of 'TriangularPyramidAsset' object is destroyed immediately.
