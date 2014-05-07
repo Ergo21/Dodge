@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+  <cppcheck version="1.61"/>
+  <errors>
+  <error id="operatorEqVarError" severity="warning" msg="Member variable 'Camera::camera' is not assigned a value in 'Camera::operator='." verbose="Member variable 'Camera::camera' is not assigned a value in 'Camera::operator='.">
+    <location file="src/Camera.h" line="60"/>
+  </error>
+  <error id="operatorEqRetRefThis" severity="style" msg="'operator=' should return reference to 'this' instance." verbose="'operator=' should return reference to 'this' instance.">
+    <location file="src/Camera.h" line="60"/>
+  </error>
+  <error id="useInitializationList" severity="performance" msg="Variable 'thiFor' is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don't explicitly write them to the initialization list. You could avoid assigning 'thiFor' a value by passing the value to the constructor in the initialization list.">
+    <location file="src/GAPlus.cpp" line="13"/>
+  </error>
+  <error id="uninitMemberVar" severity="warning" msg="Member variable 'GameAsset::g_vertex_buffer_data' is not initialized in the constructor." verbose="Member variable 'GameAsset::g_vertex_buffer_data' is not initialized in the constructor.">
+    <location file="src/GameAsset.cpp" line="15"/>
+  </error>
+  <error id="uninitMemberVar" severity="warning" msg="Member variable 'GameAsset::g_element_buffer_data' is not initialized in the constructor." verbose="Member variable 'GameAsset::g_element_buffer_data' is not initialized in the constructor.">
+    <location file="src/GameAsset.cpp" line="15"/>
+  </error>
+  <error id="uninitMemberVar" severity="warning" msg="Member variable 'GameAsset::num_vertices' is not initialized in the constructor." verbose="Member variable 'GameAsset::num_vertices' is not initialized in the constructor.">
+    <location file="src/GameAsset.cpp" line="15"/>
+  </error>
+  <error id="uninitMemberVar" severity="warning" msg="Member variable 'GameAsset::num_triangles' is not initialized in the constructor." verbose="Member variable 'GameAsset::num_triangles' is not initialized in the constructor.">
+    <location file="src/GameAsset.cpp" line="15"/>
+  </error>
+  <error id="uninitMemberVar" severity="warning" msg="Member variable 'GameAsset::g_vertex_buffer_data' is not initialized in the constructor." verbose="Member variable 'GameAsset::g_vertex_buffer_data' is not initialized in the constructor.">
+    <location file="src/GameAsset.cpp" line="22"/>
+  </error>
+  <error id="uninitMemberVar" severity="warning" msg="Member variable 'GameAsset::g_element_buffer_data' is not initialized in the constructor." verbose="Member variable 'GameAsset::g_element_buffer_data' is not initialized in the constructor.">
+    <location file="src/GameAsset.cpp" line="22"/>
+  </error>
+  <error id="uninitMemberVar" severity="warning" msg="Member variable 'GameAsset::num_vertices' is not initialized in the constructor." verbose="Member variable 'GameAsset::num_vertices' is not initialized in the constructor.">
+    <location file="src/GameAsset.cpp" line="22"/>
+  </error>
+  <error id="uninitMemberVar" severity="warning" msg="Member variable 'GameAsset::num_triangles' is not initialized in the constructor." verbose="Member variable 'GameAsset::num_triangles' is not initialized in the constructor.">
+    <location file="src/GameAsset.cpp" line="22"/>
+  </error>
+  <error id="unreadVariable" severity="style" msg="Variable 'fraShade' is assigned a value that is never used." verbose="Variable 'fraShade' is assigned a value that is never used.">
+    <location file="src/LevelLoader.cpp" line="30"/>
+  </error>
+  <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+    <location file="src/Md2Asset.cpp" line="54"/>
+  </error>
+  <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+    <location file="src/Md2Asset.cpp" line="90"/>
+  </error>
+  <error id="unusedScopedObject" severity="error" msg="Instance of 'TriangularPyramidAsset' object is destroyed immediately." verbose="Instance of 'TriangularPyramidAsset' object is destroyed immediately.">
+    <location file="src/TriangularPyramidAsset.cpp" line="17"/>
+  </error>
+  <error id="unusedFunction" severity="style" msg="The function 'getCollision' is never used." verbose="The function 'getCollision' is never used.">
+    <location file="src/PolygonTest.cpp" line="10"/>
+  </error>
+  <error id="unusedFunction" severity="style" msg="The function 'physics' is never used." verbose="The function 'physics' is never used.">
+    <location file="src/Main.cpp" line="183"/>
+  </error>
+  <error id="unusedFunction" severity="style" msg="The function 'seaVec' is never used." verbose="The function 'seaVec' is never used.">
+    <location file="src/Main.cpp" line="166"/>
+  </error>
+  <error id="unusedFunction" severity="style" msg="The function 'setInterpolator' is never used." verbose="The function 'setInterpolator' is never used.">
+    <location file="src/TriangularPyramidAsset.cpp" line="81"/>
+  </error>
+  <error id="missingInclude" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project's include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config.">
+  </error>
+  </errors>
+</results>

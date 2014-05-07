@@ -1,0 +1,20 @@
+[src/Camera.h:60]: (warning) Member variable 'Camera::camera' is not assigned a value in 'Camera::operator='.
+[src/Camera.h:60]: (style) 'operator=' should return reference to 'this' instance.
+[src/GAPlus.cpp:13]: (performance) Variable 'thiFor' is assigned in constructor body. Consider performing initialization in initialization list.
+[src/GameAsset.cpp:15]: (warning) Member variable 'GameAsset::g_vertex_buffer_data' is not initialized in the constructor.
+[src/GameAsset.cpp:15]: (warning) Member variable 'GameAsset::g_element_buffer_data' is not initialized in the constructor.
+[src/GameAsset.cpp:15]: (warning) Member variable 'GameAsset::num_vertices' is not initialized in the constructor.
+[src/GameAsset.cpp:15]: (warning) Member variable 'GameAsset::num_triangles' is not initialized in the constructor.
+[src/GameAsset.cpp:22]: (warning) Member variable 'GameAsset::g_vertex_buffer_data' is not initialized in the constructor.
+[src/GameAsset.cpp:22]: (warning) Member variable 'GameAsset::g_element_buffer_data' is not initialized in the constructor.
+[src/GameAsset.cpp:22]: (warning) Member variable 'GameAsset::num_vertices' is not initialized in the constructor.
+[src/GameAsset.cpp:22]: (warning) Member variable 'GameAsset::num_triangles' is not initialized in the constructor.
+[src/LevelLoader.cpp:30]: (style) Variable 'fraShade' is assigned a value that is never used.
+[src/Md2Asset.cpp:54]: (style) C-style pointer casting
+[src/Md2Asset.cpp:90]: (style) C-style pointer casting
+[src/TriangularPyramidAsset.cpp:17]: (error) Instance of 'TriangularPyramidAsset' object is destroyed immediately.
+[src/PolygonTest.cpp:10]: (style) The function 'getCollision' is never used.
+[src/Main.cpp:183]: (style) The function 'physics' is never used.
+[src/Main.cpp:166]: (style) The function 'seaVec' is never used.
+[src/TriangularPyramidAsset.cpp:81]: (style) The function 'setInterpolator' is never used.
+(information) Cppcheck cannot find all the include files (use --check-config for details)
