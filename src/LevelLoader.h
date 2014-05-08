@@ -7,6 +7,7 @@
 
 #include "GameAsset.h"
 #include "CuboidAsset.h"
+#include "Md3Asset.h"
 #include "GAPlus.h"
 
 using namespace std;

@@ -40,27 +40,27 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 			{
 				case 'F':
 				{
-					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, -1, i, 1, 1, 1, verShade, bluFShad)));
+					/*level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, -1, i, 1, 1, 1, verShade, bluFShad)));
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::STAT);
-					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('F', forces)));
+					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('F', forces)));*/
 					break;
 				}
-				case 'W':
+				/*case 'W':
 				{
 					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, 0, i, 1, 2, 1)));
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::STAT);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('W', forces)));
 					break;
-				}
+				}*/
 				case 'P':
 				{
-					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, -1, i, 1, 1, 1, verShade, bluFShad)));		
+					/*level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, -1, i, 1, 1, 1, verShade, bluFShad)));		
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::STAT);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('F', forces)));
-					forces.clear();
+					forces.clear();*/
 					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, 0, i, 0.75, 0.75, 0.75)));
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::DYNA);
@@ -74,12 +74,16 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 				}
 				case 'B':
 				{
-					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, -1, i, 1, 1, 1, verShade, bluFShad)));		
+					/*level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, -1, i, 1, 1, 1, verShade, bluFShad)));		
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::STAT);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('F', forces)));
-					forces.clear();
-					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, 0, i, 0.75, 0.75, 0.75, verShade, redFShad)));
+					forces.clear();*/
+
+
+
+					//level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, 0, i, 0.75, 0.75, 0.75, verShade, redFShad)));
+					level0.push_back(shared_ptr<Md3Asset> (new Md3Asset("models/sphere2.md3", verShade, redFShad)));
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::DYNA);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('B', forces)));
