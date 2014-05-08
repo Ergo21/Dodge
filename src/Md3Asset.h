@@ -38,7 +38,6 @@ private:
 	{
 	  int ident;                  /* magic number: "IDP3" */
 	  int version;                /* version: must be 15 */
-
 	  unsigned char name[64];     	// file name, max 64 characters
 	  int flags;
 	  int num_frames;		//Number of frame objs in MD3, MAX = 1024

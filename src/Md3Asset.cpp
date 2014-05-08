@@ -100,10 +100,10 @@ void Md3Asset::import_md3_asset(const string &filename) {
 		md3file.read((char*)vertLoc, sizeof(md3_vertex_t)* surf[i].num_verts);
 
 		for (int j = 0; j < surf[i].num_verts; j++) {
-			locVertices->push_back(vertLoc[j].x/1000);
-			cout<<vertLoc[j].x/1000<<endl;
-			locVertices->push_back(vertLoc[j].y/1000);
-			locVertices->push_back(vertLoc[j].z/1000);
+			locVertices->push_back(vertLoc[j].x/64);
+			//cout<<vertLoc[j].x/64<<endl;
+			locVertices->push_back(vertLoc[j].y/64);
+			locVertices->push_back(vertLoc[j].z/64);
 		}
 
 		//cout<< "Triangles: " << surf[i].num_triangles << endl;
