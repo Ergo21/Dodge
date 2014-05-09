@@ -1,4 +1,4 @@
-[src/GAPlus.cpp:13]: (performance) Variable 'thiFor' is assigned in constructor body. Consider performing initialization in initialization list.
+[src/GAPlus.cpp:12]: (performance) Variable 'thiFor' is assigned in constructor body. Consider performing initialization in initialization list.
 [src/GameAsset.cpp:15]: (warning) Member variable 'GameAsset::g_vertex_buffer_data' is not initialized in the constructor.
 [src/GameAsset.cpp:15]: (warning) Member variable 'GameAsset::g_element_buffer_data' is not initialized in the constructor.
 [src/GameAsset.cpp:15]: (warning) Member variable 'GameAsset::num_vertices' is not initialized in the constructor.
@@ -7,9 +7,12 @@
 [src/GameAsset.cpp:22]: (warning) Member variable 'GameAsset::g_element_buffer_data' is not initialized in the constructor.
 [src/GameAsset.cpp:22]: (warning) Member variable 'GameAsset::num_vertices' is not initialized in the constructor.
 [src/GameAsset.cpp:22]: (warning) Member variable 'GameAsset::num_triangles' is not initialized in the constructor.
+[src/Loop.h:36]: (style) 'class Loop' does not have a copy constructor which is recommended since the class contains a pointer to allocated memory.
 [src/Md2Asset.cpp:54]: (style) C-style pointer casting
 [src/Md2Asset.cpp:90]: (style) C-style pointer casting
+[src/Physics.cpp:98]: (style) Variable 'florAssets' is assigned a value that is never used.
 [src/TriangularPyramidAsset.cpp:17]: (error) Instance of 'TriangularPyramidAsset' object is destroyed immediately.
+[src/Camera.cpp:27]: (style) The function 'getCamera' is never used.
 [src/PolygonTest.cpp:10]: (style) The function 'getCollision' is never used.
-[src/Main.cpp:166]: (style) The function 'seaVec' is never used.
+[src/Physics.cpp:161]: (style) The function 'seaVec' is never used.
 (information) Cppcheck cannot find all the include files (use --check-config for details)
