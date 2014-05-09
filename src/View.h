@@ -42,7 +42,7 @@ class View {
   	
 	private:
 	Data *viewData;
-	SDL_Window * window = nullptr;
+	SDL_Window * window;
 };
 
 #endif

@@ -12,6 +12,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <ctime>
 
 #include "GameAsset.h"
 #include "Camera.h"
