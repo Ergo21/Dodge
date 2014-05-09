@@ -98,147 +98,145 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;CuboidAsset.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classCuboidAsset.html#a05c45a76a82b779f130b0b5828d791c2">   11</a></span>&#160;<a class="code" href="classCuboidAsset.html#a05c45a76a82b779f130b0b5828d791c2">CuboidAsset::CuboidAsset</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                       <span class="keywordtype">float</span> sX, <span class="keywordtype">float</span> sY, <span class="keywordtype">float</span> sZ) : <a class="code" href="classGameAsset.html">GameAsset</a>(</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                    string(<span class="stringliteral">&quot;shaders/hello-gl.v.glsl&quot;</span>)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                    , string(<span class="stringliteral">&quot;shaders/hello-gl.f.glsl&quot;</span>)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;          )</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    buildObj(x, y, z, sX, sY, sZ);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    bbox.reset();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    bbox = shared_ptr&lt;BoundingBox&gt;(<span class="keyword">new</span> <a class="code" href="classBoundingBox.html">BoundingBox</a>(<a class="code" href="classVectormath_1_1Aos_1_1Point3.html">Point3</a>(x, y, z), sX, sY, sZ));</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classGameAsset.html#aa26d85233ece476d599adf90074e9568">make_resources</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classCuboidAsset.html#a9cd02d7fe04750239b9ef2245340c3c6">   25</a></span>&#160;<a class="code" href="classCuboidAsset.html#a05c45a76a82b779f130b0b5828d791c2">CuboidAsset::CuboidAsset</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">float</span> sX, <span class="keywordtype">float</span> sY, <span class="keywordtype">float</span> sZ, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp; v_shader, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp; f_shader) : <a class="code" href="classGameAsset.html">GameAsset</a>(v_shader, f_shader)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    buildObj(x, y, z, sX, sY, sZ);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    bbox.reset();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    bbox = shared_ptr&lt;BoundingBox&gt;(<span class="keyword">new</span> <a class="code" href="classBoundingBox.html">BoundingBox</a>(<a class="code" href="classVectormath_1_1Aos_1_1Point3.html">Point3</a>(x, y, z), sX, sY, sZ));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;             <span class="keywordtype">float</span> sX, <span class="keywordtype">float</span> sY, <span class="keywordtype">float</span> sZ) : <a class="code" href="classGameAsset.html">GameAsset</a>(string(<span class="stringliteral">&quot;shaders/hello-gl.v.glsl&quot;</span>)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                 , string(<span class="stringliteral">&quot;shaders/hello-gl.f.glsl&quot;</span>)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;          ) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    buildObj(x, y, z, sX, sY, sZ);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    bbox.reset();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    bbox = shared_ptr&lt;BoundingBox&gt;(<span class="keyword">new</span> <a class="code" href="classBoundingBox.html">BoundingBox</a>(<a class="code" href="classVectormath_1_1Aos_1_1Point3.html">Point3</a>(x, y, z), sX, sY, sZ));</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classGameAsset.html#aa26d85233ece476d599adf90074e9568">make_resources</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classCuboidAsset.html#a9cd02d7fe04750239b9ef2245340c3c6">   23</a></span>&#160;<a class="code" href="classCuboidAsset.html#a05c45a76a82b779f130b0b5828d791c2">CuboidAsset::CuboidAsset</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">float</span> sX, <span class="keywordtype">float</span> sY, <span class="keywordtype">float</span> sZ, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp; v_shader, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp; f_shader) : <a class="code" href="classGameAsset.html">GameAsset</a>(v_shader, f_shader) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    buildObj(x, y, z, sX, sY, sZ);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    bbox.reset();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    bbox = shared_ptr&lt;BoundingBox&gt;(<span class="keyword">new</span> <a class="code" href="classBoundingBox.html">BoundingBox</a>(<a class="code" href="classVectormath_1_1Aos_1_1Point3.html">Point3</a>(x, y, z), sX, sY, sZ));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classGameAsset.html#aa26d85233ece476d599adf90074e9568">make_resources</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classGameAsset.html#aa26d85233ece476d599adf90074e9568">make_resources</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;CuboidAsset::~CuboidAsset()</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classCuboidAsset.html#a840b611da0e48bafef023ff98d97cf5b">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCuboidAsset.html#a840b611da0e48bafef023ff98d97cf5b">CuboidAsset::update</a>()</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classGameAsset.html#a9a3d6f67fb27e862458a02a7a7eb55dd">moveX</a>(<a class="code" href="classGameAsset.html#a4d64bc9652249a4d5512b52432b8154a">getGAP</a>()-&gt;getMovX());</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classGameAsset.html#a5252c2f4119fdc5be9bc8827fb351374">moveY</a>(<a class="code" href="classGameAsset.html#a4d64bc9652249a4d5512b52432b8154a">getGAP</a>()-&gt;getMovY());</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classGameAsset.html#adfd83d678c0266dfc919bae6b6543495">moveZ</a>(<a class="code" href="classGameAsset.html#a4d64bc9652249a4d5512b52432b8154a">getGAP</a>()-&gt;getMovZ());</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classCuboidAsset.html#adf627dc1cad3cfe5a039d829b4ad2c32">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCuboidAsset.html#adf627dc1cad3cfe5a039d829b4ad2c32">CuboidAsset::draw</a>()</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    GameAsset::draw();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;CuboidAsset::~CuboidAsset() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classCuboidAsset.html#a840b611da0e48bafef023ff98d97cf5b">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCuboidAsset.html#a840b611da0e48bafef023ff98d97cf5b">CuboidAsset::update</a>() {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classGameAsset.html#a9a3d6f67fb27e862458a02a7a7eb55dd">moveX</a>(<a class="code" href="classGameAsset.html#a4d64bc9652249a4d5512b52432b8154a">getGAP</a>()-&gt;getMovX());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classGameAsset.html#a5252c2f4119fdc5be9bc8827fb351374">moveY</a>(<a class="code" href="classGameAsset.html#a4d64bc9652249a4d5512b52432b8154a">getGAP</a>()-&gt;getMovY());</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classGameAsset.html#adfd83d678c0266dfc919bae6b6543495">moveZ</a>(<a class="code" href="classGameAsset.html#a4d64bc9652249a4d5512b52432b8154a">getGAP</a>()-&gt;getMovZ());</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classCuboidAsset.html#adf627dc1cad3cfe5a039d829b4ad2c32">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCuboidAsset.html#adf627dc1cad3cfe5a039d829b4ad2c32">CuboidAsset::draw</a>() {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classGameAsset.html#a2d7e18a8f1dd8ba89ed1bd14f2affeab">GameAsset::draw</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> CuboidAsset::buildObj(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">float</span> sX, <span class="keywordtype">float</span> sY, <span class="keywordtype">float</span> sZ) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    num_vertices = 8;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    num_triangles = 12;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    g_vertex_buffer_data = <span class="keyword">new</span> GLfloat[num_vertices * 3];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    g_element_buffer_data = <span class="keyword">new</span> GLushort[num_triangles * 3];</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> CuboidAsset::buildObj(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">float</span> sX, <span class="keywordtype">float</span> sY, <span class="keywordtype">float</span> sZ)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    num_vertices = 8;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    num_triangles = 12;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    g_vertex_buffer_data = <span class="keyword">new</span> GLfloat[num_vertices * 3];</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    g_element_buffer_data = <span class="keyword">new</span> GLushort[num_triangles * 3];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    g_vertex_buffer_data[0]  = -sX/2;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    g_vertex_buffer_data[1]  = -sY/2;       </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    g_vertex_buffer_data[2]  = -sZ/2;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    g_vertex_buffer_data[3]  = -sX/2 + sX;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    g_vertex_buffer_data[4]  = -sY/2;       </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    g_vertex_buffer_data[5]  = -sZ/2;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    g_vertex_buffer_data[6]  = -sX/2;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    g_vertex_buffer_data[7]  = -sY/2 + sY;      </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    g_vertex_buffer_data[8]  = -sZ/2;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    g_vertex_buffer_data[9]  = -sX/2 + sX;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    g_vertex_buffer_data[10] = -sY/2 + sY;      </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    g_vertex_buffer_data[11] = -sZ/2;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    g_vertex_buffer_data[12] = -sX/2;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    g_vertex_buffer_data[13] = -sY/2;       </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    g_vertex_buffer_data[14] = -sZ/2 + sZ;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    g_vertex_buffer_data[15] = -sX/2 + sX;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    g_vertex_buffer_data[16] = -sY/2;       </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    g_vertex_buffer_data[17] = -sZ/2 + sZ;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    g_vertex_buffer_data[18] = -sX/2;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    g_vertex_buffer_data[19] = -sY/2 + sY;      </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    g_vertex_buffer_data[20] = -sZ/2 + sZ;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    g_vertex_buffer_data[21] = -sX/2 + sX;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    g_vertex_buffer_data[22] = -sY/2 + sY;      </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    g_vertex_buffer_data[23] = -sZ/2 + sZ;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    g_element_buffer_data[0]  = 0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    g_element_buffer_data[1]  = 1;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    g_element_buffer_data[2]  = 3;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    g_element_buffer_data[3]  = 0;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    g_element_buffer_data[4]  = 2;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    g_element_buffer_data[5]  = 3;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    g_element_buffer_data[6]  = 0;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    g_element_buffer_data[7]  = 4;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    g_element_buffer_data[8]  = 6;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    g_element_buffer_data[9]  = 0;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    g_element_buffer_data[10] = 2;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    g_element_buffer_data[11] = 6;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    g_element_buffer_data[12] = 0;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    g_element_buffer_data[13] = 1;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    g_element_buffer_data[14] = 5;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    g_element_buffer_data[15] = 0;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    g_element_buffer_data[16] = 4;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    g_element_buffer_data[17] = 5;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    g_element_buffer_data[18] = 1;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    g_element_buffer_data[19] = 5;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    g_element_buffer_data[20] = 7;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    g_element_buffer_data[21] = 1;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    g_element_buffer_data[22] = 3;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    g_element_buffer_data[23] = 7;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    g_element_buffer_data[24] = 2;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    g_element_buffer_data[25] = 3;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    g_element_buffer_data[26] = 7;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    g_element_buffer_data[27] = 2;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    g_element_buffer_data[28] = 6;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    g_element_buffer_data[29] = 7;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    g_element_buffer_data[30] = 4;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    g_element_buffer_data[31] = 5;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    g_element_buffer_data[32] = 7;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    g_element_buffer_data[33] = 4;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    g_element_buffer_data[34] = 6;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    g_element_buffer_data[35] = 7;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
-<div class="ttc" id="classGameAsset_html_a9a3d6f67fb27e862458a02a7a7eb55dd"><div class="ttname"><a href="classGameAsset.html#a9a3d6f67fb27e862458a02a7a7eb55dd">GameAsset::moveX</a></div><div class="ttdeci">void moveX(float x)</div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00241">GameAsset.cpp:241</a></div></div>
-<div class="ttc" id="classBoundingBox_html"><div class="ttname"><a href="classBoundingBox.html">BoundingBox</a></div><div class="ttdoc">Bounding Box Class. </div><div class="ttdef"><b>Definition:</b> <a href="BoundingBox_8h_source.html#l00031">BoundingBox.h:31</a></div></div>
-<div class="ttc" id="classGameAsset_html_a5252c2f4119fdc5be9bc8827fb351374"><div class="ttname"><a href="classGameAsset.html#a5252c2f4119fdc5be9bc8827fb351374">GameAsset::moveY</a></div><div class="ttdeci">void moveY(float y)</div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00245">GameAsset.cpp:245</a></div></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">//Vertex data</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    g_vertex_buffer_data[0]  = -sX/2;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    g_vertex_buffer_data[1]  = -sY/2;       </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    g_vertex_buffer_data[2]  = -sZ/2;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    g_vertex_buffer_data[3]  = -sX/2 + sX;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    g_vertex_buffer_data[4]  = -sY/2;       </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    g_vertex_buffer_data[5]  = -sZ/2;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    g_vertex_buffer_data[6]  = -sX/2;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    g_vertex_buffer_data[7]  = -sY/2 + sY;      </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    g_vertex_buffer_data[8]  = -sZ/2;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    g_vertex_buffer_data[9]  = -sX/2 + sX;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    g_vertex_buffer_data[10] = -sY/2 + sY;      </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    g_vertex_buffer_data[11] = -sZ/2;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    g_vertex_buffer_data[12] = -sX/2;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    g_vertex_buffer_data[13] = -sY/2;       </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    g_vertex_buffer_data[14] = -sZ/2 + sZ;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    g_vertex_buffer_data[15] = -sX/2 + sX;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    g_vertex_buffer_data[16] = -sY/2;       </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    g_vertex_buffer_data[17] = -sZ/2 + sZ;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    g_vertex_buffer_data[18] = -sX/2;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    g_vertex_buffer_data[19] = -sY/2 + sY;      </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    g_vertex_buffer_data[20] = -sZ/2 + sZ;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    g_vertex_buffer_data[21] = -sX/2 + sX;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    g_vertex_buffer_data[22] = -sY/2 + sY;      </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    g_vertex_buffer_data[23] = -sZ/2 + sZ;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">//Indices data</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    g_element_buffer_data[0]  = 0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    g_element_buffer_data[1]  = 1;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    g_element_buffer_data[2]  = 3;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    g_element_buffer_data[3]  = 0;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    g_element_buffer_data[4]  = 2;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    g_element_buffer_data[5]  = 3;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    g_element_buffer_data[6]  = 0;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    g_element_buffer_data[7]  = 4;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    g_element_buffer_data[8]  = 6;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    g_element_buffer_data[9]  = 0;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    g_element_buffer_data[10] = 2;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    g_element_buffer_data[11] = 6;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    g_element_buffer_data[12] = 0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    g_element_buffer_data[13] = 1;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    g_element_buffer_data[14] = 5;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    g_element_buffer_data[15] = 0;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    g_element_buffer_data[16] = 4;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    g_element_buffer_data[17] = 5;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    g_element_buffer_data[18] = 1;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    g_element_buffer_data[19] = 5;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    g_element_buffer_data[20] = 7;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    g_element_buffer_data[21] = 1;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    g_element_buffer_data[22] = 3;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    g_element_buffer_data[23] = 7;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    g_element_buffer_data[24] = 2;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    g_element_buffer_data[25] = 3;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    g_element_buffer_data[26] = 7;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    g_element_buffer_data[27] = 2;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    g_element_buffer_data[28] = 6;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    g_element_buffer_data[29] = 7;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    g_element_buffer_data[30] = 4;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    g_element_buffer_data[31] = 5;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    g_element_buffer_data[32] = 7;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    g_element_buffer_data[33] = 4;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    g_element_buffer_data[34] = 6;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    g_element_buffer_data[35] = 7;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="ttc" id="classGameAsset_html_a9a3d6f67fb27e862458a02a7a7eb55dd"><div class="ttname"><a href="classGameAsset.html#a9a3d6f67fb27e862458a02a7a7eb55dd">GameAsset::moveX</a></div><div class="ttdeci">void moveX(float x)</div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00234">GameAsset.cpp:234</a></div></div>
+<div class="ttc" id="classBoundingBox_html"><div class="ttname"><a href="classBoundingBox.html">BoundingBox</a></div><div class="ttdoc">Bounding Box Class. </div><div class="ttdef"><b>Definition:</b> <a href="BoundingBox_8h_source.html#l00032">BoundingBox.h:32</a></div></div>
+<div class="ttc" id="classGameAsset_html_a5252c2f4119fdc5be9bc8827fb351374"><div class="ttname"><a href="classGameAsset.html#a5252c2f4119fdc5be9bc8827fb351374">GameAsset::moveY</a></div><div class="ttdeci">void moveY(float y)</div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00238">GameAsset.cpp:238</a></div></div>
 <div class="ttc" id="classVectormath_1_1Aos_1_1Point3_html"><div class="ttname"><a href="classVectormath_1_1Aos_1_1Point3.html">Vectormath::Aos::Point3</a></div><div class="ttdef"><b>Definition:</b> <a href="ppu_2cpp_2vectormath__aos_8h_source.html#l00762">vectormath_aos.h:762</a></div></div>
-<div class="ttc" id="classCuboidAsset_html_adf627dc1cad3cfe5a039d829b4ad2c32"><div class="ttname"><a href="classCuboidAsset.html#adf627dc1cad3cfe5a039d829b4ad2c32">CuboidAsset::draw</a></div><div class="ttdeci">virtual void draw()</div><div class="ttdoc">Draw Method. </div><div class="ttdef"><b>Definition:</b> <a href="CuboidAsset_8cpp_source.html#l00046">CuboidAsset.cpp:46</a></div></div>
-<div class="ttc" id="classCuboidAsset_html_a840b611da0e48bafef023ff98d97cf5b"><div class="ttname"><a href="classCuboidAsset.html#a840b611da0e48bafef023ff98d97cf5b">CuboidAsset::update</a></div><div class="ttdeci">virtual void update()</div><div class="ttdoc">Update Method. </div><div class="ttdef"><b>Definition:</b> <a href="CuboidAsset_8cpp_source.html#l00039">CuboidAsset.cpp:39</a></div></div>
-<div class="ttc" id="classGameAsset_html_aa26d85233ece476d599adf90074e9568"><div class="ttname"><a href="classGameAsset.html#aa26d85233ece476d599adf90074e9568">GameAsset::make_resources</a></div><div class="ttdeci">int make_resources()</div><div class="ttdoc">Create shaders &amp; buffers method. </div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00193">GameAsset.cpp:193</a></div></div>
-<div class="ttc" id="classGameAsset_html_adfd83d678c0266dfc919bae6b6543495"><div class="ttname"><a href="classGameAsset.html#adfd83d678c0266dfc919bae6b6543495">GameAsset::moveZ</a></div><div class="ttdeci">void moveZ(float z)</div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00249">GameAsset.cpp:249</a></div></div>
-<div class="ttc" id="classGameAsset_html_a4d64bc9652249a4d5512b52432b8154a"><div class="ttname"><a href="classGameAsset.html#a4d64bc9652249a4d5512b52432b8154a">GameAsset::getGAP</a></div><div class="ttdeci">shared_ptr&lt; GAPlus &gt; getGAP()</div><div class="ttdoc">Gets GAPlus method. </div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00236">GameAsset.cpp:236</a></div></div>
+<div class="ttc" id="classCuboidAsset_html_adf627dc1cad3cfe5a039d829b4ad2c32"><div class="ttname"><a href="classCuboidAsset.html#adf627dc1cad3cfe5a039d829b4ad2c32">CuboidAsset::draw</a></div><div class="ttdeci">virtual void draw()</div><div class="ttdoc">Draw Method. </div><div class="ttdef"><b>Definition:</b> <a href="CuboidAsset_8cpp_source.html#l00041">CuboidAsset.cpp:41</a></div></div>
+<div class="ttc" id="classCuboidAsset_html_a840b611da0e48bafef023ff98d97cf5b"><div class="ttname"><a href="classCuboidAsset.html#a840b611da0e48bafef023ff98d97cf5b">CuboidAsset::update</a></div><div class="ttdeci">virtual void update()</div><div class="ttdoc">Update Method. </div><div class="ttdef"><b>Definition:</b> <a href="CuboidAsset_8cpp_source.html#l00035">CuboidAsset.cpp:35</a></div></div>
+<div class="ttc" id="classGameAsset_html_aa26d85233ece476d599adf90074e9568"><div class="ttname"><a href="classGameAsset.html#aa26d85233ece476d599adf90074e9568">GameAsset::make_resources</a></div><div class="ttdeci">int make_resources()</div><div class="ttdoc">Create shaders &amp; buffers method. </div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00189">GameAsset.cpp:189</a></div></div>
+<div class="ttc" id="classGameAsset_html_adfd83d678c0266dfc919bae6b6543495"><div class="ttname"><a href="classGameAsset.html#adfd83d678c0266dfc919bae6b6543495">GameAsset::moveZ</a></div><div class="ttdeci">void moveZ(float z)</div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00242">GameAsset.cpp:242</a></div></div>
+<div class="ttc" id="classGameAsset_html_a2d7e18a8f1dd8ba89ed1bd14f2affeab"><div class="ttname"><a href="classGameAsset.html#a2d7e18a8f1dd8ba89ed1bd14f2affeab">GameAsset::draw</a></div><div class="ttdeci">virtual void draw()</div><div class="ttdoc">Draw Method. </div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00067">GameAsset.cpp:67</a></div></div>
+<div class="ttc" id="classGameAsset_html_a4d64bc9652249a4d5512b52432b8154a"><div class="ttname"><a href="classGameAsset.html#a4d64bc9652249a4d5512b52432b8154a">GameAsset::getGAP</a></div><div class="ttdeci">shared_ptr&lt; GAPlus &gt; getGAP()</div><div class="ttdoc">Gets this GAPlus method. </div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8cpp_source.html#l00230">GameAsset.cpp:230</a></div></div>
 <div class="ttc" id="classCuboidAsset_html_a05c45a76a82b779f130b0b5828d791c2"><div class="ttname"><a href="classCuboidAsset.html#a05c45a76a82b779f130b0b5828d791c2">CuboidAsset::CuboidAsset</a></div><div class="ttdeci">CuboidAsset(float x, float y, float z, float sX, float sY, float sZ)</div><div class="ttdoc">Constructor Method. </div><div class="ttdef"><b>Definition:</b> <a href="CuboidAsset_8cpp_source.html#l00011">CuboidAsset.cpp:11</a></div></div>
-<div class="ttc" id="classGameAsset_html"><div class="ttname"><a href="classGameAsset.html">GameAsset</a></div><div class="ttdoc">GameAsset Class. </div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8h_source.html#l00034">GameAsset.h:34</a></div></div>
+<div class="ttc" id="classGameAsset_html"><div class="ttname"><a href="classGameAsset.html">GameAsset</a></div><div class="ttdoc">GameAsset Class. </div><div class="ttdef"><b>Definition:</b> <a href="GameAsset_8h_source.html#l00035">GameAsset.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 7 2014 12:59:22 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 9 2014 11:56:20 for Axiom by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

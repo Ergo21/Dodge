@@ -13,19 +13,14 @@
 #include <fstream>
 #include <vector>
 #include <memory>
-#include <ctime>
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <SDL2/SDL.h>
 
-#include "GameAsset.h"
-#include "Md2Asset.h"
-#include "TriangularPyramidAsset.h"
-#include "BallisticInterpolator.h"
 #include "Camera.h"
-#include "CuboidAsset.h"
-#include "LevelLoader.h"
+#include "GameAsset.h"
 #include "Global.h"
+#include "LevelLoader.h"
 
 using namespace std;
 
@@ -39,7 +34,7 @@ class Data {
 	public:
 	//! Data Constructor
 	/*!
-		Creates data.
+		Creates data used by multiple classes.
 	*/
 	Data();
 
@@ -56,14 +51,16 @@ class Data {
 	shared_ptr<GameAsset> getPlayer();
 
 	private:
-	
-
-	void organAssets(vector<shared_ptr<GameAsset>> tempAssets);
-  
 	vector<shared_ptr<GameAsset> > ballAssets; //All ball objects
   	vector<shared_ptr<GameAsset> > florAssets; //All floor objects
 	vector<shared_ptr<GameAsset> > wallAssets; //All wall objects
   	shared_ptr<GameAsset> player; //Player asset, assumes 1 player
+
+	//! Organise Assets
+	/*!
+		Splits asset list given by LevelLoader into, several lists of certain Assets.
+	*/
+	void organAssets(vector<shared_ptr<GameAsset>> tempAssets);
 };
 
 

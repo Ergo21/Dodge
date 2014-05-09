@@ -13,18 +13,11 @@
 #include <fstream>
 #include <vector>
 #include <memory>
-#include <ctime>
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <SDL2/SDL.h>
 
-#include "GameAsset.h"
-#include "Md2Asset.h"
-#include "TriangularPyramidAsset.h"
-#include "BallisticInterpolator.h"
 #include "Camera.h"
-#include "CuboidAsset.h"
-#include "LevelLoader.h"
 #include "Global.h"
 #include "Data.h"
 
@@ -44,7 +37,7 @@ class Loop {
 	public:
 	//! Loop Constructor
 	/*!
-		Initialises world to be looped
+		Initialises world to be looped sending window created in Main
 	*/
 	Loop(SDL_Window * tempWindow);
 

@@ -46,8 +46,7 @@ vector<ModelTriangle> GameAsset::getTriangles()
 	vector<ModelTriangle> thTriangles;
 	Point3 poi1, poi2, poi3;
 	int eleSize = num_triangles*3;
-	for(int i = 0; i < eleSize; i += 3)
-	{
+	for(int i = 0; i < eleSize; i += 3) {
 		poi1 = Point3(g_vertex_buffer_data[(g_element_buffer_data[i])], 
 					  g_vertex_buffer_data[(g_element_buffer_data[i]) + 1],
 					  g_vertex_buffer_data[(g_element_buffer_data[i]) + 2]);
@@ -112,8 +111,7 @@ void GameAsset::draw() {
 /*
  * Functions for general purpose stuff
  */
-GLchar * GameAsset::shader_file_contents(const string &filename, GLint * length)
-{
+GLchar * GameAsset::shader_file_contents(const string &filename, GLint * length) {
   ifstream input_file;
   input_file.open(filename.c_str(), ios::in);
 
@@ -144,8 +142,7 @@ GLuint GameAsset::make_buffer(
     return buffer;
 }
 
-GLuint GameAsset::make_shader(GLenum type, const char *filename)
-{
+GLuint GameAsset::make_shader(GLenum type, const char *filename) {
     GLint length;
     GLchar *source = shader_file_contents(filename, &length);
     GLuint shader;
@@ -168,8 +165,7 @@ GLuint GameAsset::make_shader(GLenum type, const char *filename)
     return shader;
 }
 
-GLuint GameAsset::make_program(GLuint vertex_shader, GLuint fragment_shader)
-{
+GLuint GameAsset::make_program(GLuint vertex_shader, GLuint fragment_shader) {
     GLint program_ok;
 
     GLuint program = glCreateProgram();
@@ -190,8 +186,7 @@ GLuint GameAsset::make_program(GLuint vertex_shader, GLuint fragment_shader)
 /*
  * Load and create all of our resources:
  */
-int GameAsset::make_resources(void)
-{
+int GameAsset::make_resources(void) {
     vertex_buffer = make_buffer(
         GL_ARRAY_BUFFER,
         g_vertex_buffer_data,
@@ -228,13 +223,11 @@ int GameAsset::make_resources(void)
     return 1;
 }
 
-void GameAsset::setGAP(shared_ptr<GAPlus> g)
-{
+void GameAsset::setGAP(shared_ptr<GAPlus> g) {
 	thiGAP = g;
 }
 
-shared_ptr<GAPlus> GameAsset::getGAP()
-{
+shared_ptr<GAPlus> GameAsset::getGAP() {
 	return thiGAP;
 }
 

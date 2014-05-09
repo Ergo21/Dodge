@@ -4,12 +4,12 @@
 	Author: Joseph Watts
 	Created on: 29 Apr 2014
 */
+#ifndef GAPLUS_H_
+#define GAPLUS_H_
+
 #include <vector>
 
 #include "Global.h"
-
-#ifndef GAPLUS_H_
-#define GAPLUS_H_
 
 using namespace std;
   //! GAPlus Class

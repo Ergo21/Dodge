@@ -15,16 +15,9 @@
 
 #include <SDL2/SDL.h>
 
-#include "GameAsset.h"
-#include "Md2Asset.h"
-#include "TriangularPyramidAsset.h"
-#include "BallisticInterpolator.h"
 #include "Camera.h"
-#include "CuboidAsset.h"
-#include "LevelLoader.h"
-#include "Global.h"
-
 #include "Data.h"
+#include "Global.h"
 #include "Physics.h"
 
 using namespace std;
@@ -35,8 +28,20 @@ using namespace std;
   */
 class Controller {
 	public: 
+	//! Constructor
+	/*!
+		Requires Data to change the world, and Physics to test for player movement collision.
+	*/
 	Controller(Data * d, Physics * p);
+	//! Move Mouse Event Handler
+	/*!
+		Currently only handles mouse x movement (mouse y movement is in code but buggy), rotates the camera.
+	*/
 	void mMoveEvents(SDL_Event &event);
+	//! Key Down Event Handler
+	/*!
+		WASD- Move player/camera, g- Start game
+	*/
 	void kDownEvents(SDL_Event &event);
 
 	private:
@@ -50,8 +55,14 @@ class Controller {
 	float pi;
 	float tAng;
 	float tAngMem;
-
+	 
+	/*!
+		Move player to their relative Left/Right, depending on value of d(-1, 1)
+	*/
 	void moveX(int d);
+	/*!
+		Move player to their relative Forward/Back, depending on value of d(1, -1)
+	*/	
 	void moveZ(int d);
 };
 

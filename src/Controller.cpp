@@ -68,8 +68,9 @@ void Controller::kDownEvents(SDL_Event &event) {		//Key down
 			}
 			break;
 		}
-		case SDLK_w: {
-			moveZ(1);
+		//All movement is relative to players view
+		case SDLK_w: {	
+			moveZ(1);	
 			break;
 		}
 		case SDLK_s: {
@@ -88,6 +89,7 @@ void Controller::kDownEvents(SDL_Event &event) {		//Key down
 			conPhy->startGame();
 			    	break;
 			}
+		//Rotate Camera
 		case SDLK_LEFT: {		
 			Camera::getInstance().setCamera((camera * Matrix4::rotation(tAng, locUp)));
 			tAngMem += tAng;

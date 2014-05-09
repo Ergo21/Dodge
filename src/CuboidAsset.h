@@ -6,11 +6,10 @@
 	Based on code provided by aidan
 */
 
-#include "GameAsset.h"
-//#include "IInterpolator.h"
-
 #ifndef CUBOIDASSET_H
 #define CUBOIDASSET_H
+
+#include "GameAsset.h"
 
   //! CuboidAsset Class
   /*!
@@ -43,6 +42,10 @@ class CuboidAsset : public GameAsset {
   //void setInterpolator(shared_ptr<IInterpolator> li);
  private:
   //shared_ptr<IInterpolator> li;
+	//! Build Object Method
+	/*!
+		Creates the vertex and indices based on values given.
+	*/
 	void buildObj(float x, float y, float z, float sX, float sY, float sZ);
 };
 

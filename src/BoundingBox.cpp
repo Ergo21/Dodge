@@ -28,8 +28,7 @@ bool BoundingBox::collidesWith(const BoundingBox & b) {
   if(between(projectOntoAxis(*this, X), projectOntoAxis(b, X))
      && between(projectOntoAxis(*this, Y), projectOntoAxis(b, Y))
      && between(projectOntoAxis(*this, Z), projectOntoAxis(b, Z))
-     )
-    {
+     ) {
 		return true;
     }
 

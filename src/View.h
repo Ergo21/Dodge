@@ -18,17 +18,9 @@
 #include <fstream>
 #include <vector>
 
-
-#include "GameAsset.h"
-#include "Md2Asset.h"
-#include "TriangularPyramidAsset.h"
-#include "BallisticInterpolator.h"
-#include "Camera.h"
-#include "CuboidAsset.h"
-#include "LevelLoader.h"
-#include "Global.h"
-
 #include "Data.h"
+#include "GameAsset.h"
+#include "Global.h"
 
 using namespace std;
 

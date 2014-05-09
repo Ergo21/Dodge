@@ -24,7 +24,7 @@ class TriangularPyramidAsset : public GameAsset {
 
   //! Update Method
   /*!
-    	Updates the asset using the interpolator.
+    	Updates the asset.
   */
   virtual void update();
   //! Draw Method

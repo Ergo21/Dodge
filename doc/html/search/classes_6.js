@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['levelloader',['LevelLoader',['../classLevelLoader.html',1,'']]]
+  ['iinterpolator',['IInterpolator',['../classIInterpolator.html',1,'']]]
 ];

@@ -1,0 +1,88 @@
+\hypertarget{classController}{\section{Controller Class Reference}
+\label{classController}\index{Controller@{Controller}}
+}
+
+
+\hyperlink{classController}{Controller} Class.  
+
+
+
+
+{\ttfamily \#include $<$Controller.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classController_a1528d018e9f08fe261455d427efd1d2f}{Controller} (\hyperlink{classData}{Data} $\ast$d, \hyperlink{classPhysics}{Physics} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classController_a96c6647ef20bf9425ca1704fc5e78d2f}{m\-Move\-Events} (S\-D\-L\-\_\-\-Event \&event)
+\begin{DoxyCompactList}\small\item\em Move Mouse Event Handler. \end{DoxyCompactList}\item 
+void \hyperlink{classController_a6037d971c6636f752aca1cd099ba0d33}{k\-Down\-Events} (S\-D\-L\-\_\-\-Event \&event)
+\begin{DoxyCompactList}\small\item\em Key Down Event Handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classController}{Controller} Class. 
+
+A simple class that handles Mouse and Keyboard events. 
+
+Definition at line 29 of file Controller.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classController_a1528d018e9f08fe261455d427efd1d2f}{\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\subsubsection[{Controller}]{\setlength{\rightskip}{0pt plus 5cm}Controller\-::\-Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf Data} $\ast$}]{d, }
+\item[{{\bf Physics} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{classController_a1528d018e9f08fe261455d427efd1d2f}
+
+
+Constructor. 
+
+Requires \hyperlink{classData}{Data} to change the world, and \hyperlink{classPhysics}{Physics} to test for player movement collision. 
+
+Definition at line 11 of file Controller.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classController_a6037d971c6636f752aca1cd099ba0d33}{\index{Controller@{Controller}!k\-Down\-Events@{k\-Down\-Events}}
+\index{k\-Down\-Events@{k\-Down\-Events}!Controller@{Controller}}
+\subsubsection[{k\-Down\-Events}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::k\-Down\-Events (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Event \&}]{event}
+\end{DoxyParamCaption}
+)}}\label{classController_a6037d971c6636f752aca1cd099ba0d33}
+
+
+Key Down Event Handler. 
+
+W\-A\-S\-D-\/ Move player/camera, g-\/ Start game 
+
+Definition at line 58 of file Controller.\-cpp.
+
+\hypertarget{classController_a96c6647ef20bf9425ca1704fc5e78d2f}{\index{Controller@{Controller}!m\-Move\-Events@{m\-Move\-Events}}
+\index{m\-Move\-Events@{m\-Move\-Events}!Controller@{Controller}}
+\subsubsection[{m\-Move\-Events}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::m\-Move\-Events (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Event \&}]{event}
+\end{DoxyParamCaption}
+)}}\label{classController_a96c6647ef20bf9425ca1704fc5e78d2f}
+
+
+Move Mouse Event Handler. 
+
+Currently only handles mouse x movement (mouse y movement is in code but buggy), rotates the camera. 
+
+Definition at line 22 of file Controller.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/Controller.\-h\item 
+src/Controller.\-cpp\end{DoxyCompactItemize}

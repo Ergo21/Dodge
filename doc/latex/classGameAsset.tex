@@ -19,19 +19,19 @@ Inheritance diagram for Game\-Asset\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classGameAsset_ac6d2340f41dd95e71892327dae4e1585}{{\bfseries Game\-Asset} (const string \&v\-\_\-shader, const string \&f\-\_\-shader)}\label{classGameAsset_ac6d2340f41dd95e71892327dae4e1585}
-
-\item 
+\hyperlink{classGameAsset_a9c96b0bafa2b6973a2e8c09bf51c52ec}{Game\-Asset} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGameAsset}{Game\-Asset} Empty Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classGameAsset_ac6d2340f41dd95e71892327dae4e1585}{Game\-Asset} (const string \&v\-\_\-shader, const string \&f\-\_\-shader)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGameAsset}{Game\-Asset} Shader Constructor. \end{DoxyCompactList}\item 
 bool \hyperlink{classGameAsset_a612793ce2a354d2f8839a779d0ca2227}{collides\-With} (\hyperlink{classGameAsset}{Game\-Asset} \&a)
 \begin{DoxyCompactList}\small\item\em Collision method. \end{DoxyCompactList}\item 
 void \hyperlink{classGameAsset_aa4e2e9faf5cc690677549cbaf30ab80a}{set\-G\-A\-P} (shared\-\_\-ptr$<$ \hyperlink{classGAPlus}{G\-A\-Plus} $>$ g)
 \begin{DoxyCompactList}\small\item\em Sets \hyperlink{classGAPlus}{G\-A\-Plus} method. \end{DoxyCompactList}\item 
 \hypertarget{classGameAsset_a4d64bc9652249a4d5512b52432b8154a}{shared\-\_\-ptr$<$ \hyperlink{classGAPlus}{G\-A\-Plus} $>$ \hyperlink{classGameAsset_a4d64bc9652249a4d5512b52432b8154a}{get\-G\-A\-P} ()}\label{classGameAsset_a4d64bc9652249a4d5512b52432b8154a}
 
-\begin{DoxyCompactList}\small\item\em Gets \hyperlink{classGAPlus}{G\-A\-Plus} method. \end{DoxyCompactList}\item 
-\hypertarget{classGameAsset_a2d7e18a8f1dd8ba89ed1bd14f2affeab}{virtual void {\bfseries draw} ()}\label{classGameAsset_a2d7e18a8f1dd8ba89ed1bd14f2affeab}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Gets this \hyperlink{classGAPlus}{G\-A\-Plus} method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGameAsset_a2d7e18a8f1dd8ba89ed1bd14f2affeab}{draw} ()
+\begin{DoxyCompactList}\small\item\em Draw Method. \end{DoxyCompactList}\item 
 \hypertarget{classGameAsset_a42688ec8f02e201eaaa01e74a112083f}{virtual void {\bfseries update} ()=0}\label{classGameAsset_a42688ec8f02e201eaaa01e74a112083f}
 
 \item 
@@ -105,7 +105,41 @@ vector$<$ \hyperlink{classModelTriangle}{Model\-Triangle} $>$ \hyperlink{classGa
 
 The super class of all other objects in the game, containing vertex \& fragment shaders and the objects model. 
 
-Definition at line 34 of file Game\-Asset.\-h.
+Definition at line 35 of file Game\-Asset.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGameAsset_a9c96b0bafa2b6973a2e8c09bf51c52ec}{\index{Game\-Asset@{Game\-Asset}!Game\-Asset@{Game\-Asset}}
+\index{Game\-Asset@{Game\-Asset}!GameAsset@{Game\-Asset}}
+\subsubsection[{Game\-Asset}]{\setlength{\rightskip}{0pt plus 5cm}Game\-Asset\-::\-Game\-Asset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGameAsset_a9c96b0bafa2b6973a2e8c09bf51c52ec}
+
+
+\hyperlink{classGameAsset}{Game\-Asset} Empty Constructor. 
+
+Build object with default shaders 
+
+Definition at line 15 of file Game\-Asset.\-cpp.
+
+\hypertarget{classGameAsset_ac6d2340f41dd95e71892327dae4e1585}{\index{Game\-Asset@{Game\-Asset}!Game\-Asset@{Game\-Asset}}
+\index{Game\-Asset@{Game\-Asset}!GameAsset@{Game\-Asset}}
+\subsubsection[{Game\-Asset}]{\setlength{\rightskip}{0pt plus 5cm}Game\-Asset\-::\-Game\-Asset (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{v\-\_\-shader, }
+\item[{const string \&}]{f\-\_\-shader}
+\end{DoxyParamCaption}
+)}}\label{classGameAsset_ac6d2340f41dd95e71892327dae4e1585}
+
+
+\hyperlink{classGameAsset}{Game\-Asset} Shader Constructor. 
+
+Build object with given shaders 
+
+Definition at line 22 of file Game\-Asset.\-cpp.
 
 
 
@@ -124,6 +158,25 @@ Collision method.
 Method to detect if this asset collides with given asset. 
 
 Definition at line 33 of file Game\-Asset.\-cpp.
+
+\hypertarget{classGameAsset_a2d7e18a8f1dd8ba89ed1bd14f2affeab}{\index{Game\-Asset@{Game\-Asset}!draw@{draw}}
+\index{draw@{draw}!GameAsset@{Game\-Asset}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Asset\-::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGameAsset_a2d7e18a8f1dd8ba89ed1bd14f2affeab}
+
+
+Draw Method. 
+
+Draws object on screen based on vertex and element buffer data 
+
+Reimplemented in \hyperlink{classCuboidAsset_adf627dc1cad3cfe5a039d829b4ad2c32}{Cuboid\-Asset}, and \hyperlink{classTriangularPyramidAsset_a9a6c04fc73cbfc2c01477907f3033a17}{Triangular\-Pyramid\-Asset}.
+
+
+
+Definition at line 67 of file Game\-Asset.\-cpp.
 
 \hypertarget{classGameAsset_aad7eeea6e2a9544fd2b2fff522cca56b}{\index{Game\-Asset@{Game\-Asset}!get\-Triangles@{get\-Triangles}}
 \index{get\-Triangles@{get\-Triangles}!GameAsset@{Game\-Asset}}
@@ -151,7 +204,7 @@ Create Buffers method.
 
 Creates this assets buffers. 
 
-Definition at line 135 of file Game\-Asset.\-cpp.
+Definition at line 133 of file Game\-Asset.\-cpp.
 
 \hypertarget{classGameAsset_a9d9574a21cf6b52f7a825879ca50b19d}{\index{Game\-Asset@{Game\-Asset}!make\-\_\-program@{make\-\_\-program}}
 \index{make\-\_\-program@{make\-\_\-program}!GameAsset@{Game\-Asset}}
@@ -167,7 +220,7 @@ Create program method.
 
 Creates this assets shader program. 
 
-Definition at line 171 of file Game\-Asset.\-cpp.
+Definition at line 168 of file Game\-Asset.\-cpp.
 
 \hypertarget{classGameAsset_aa26d85233ece476d599adf90074e9568}{\index{Game\-Asset@{Game\-Asset}!make\-\_\-resources@{make\-\_\-resources}}
 \index{make\-\_\-resources@{make\-\_\-resources}!GameAsset@{Game\-Asset}}
@@ -182,7 +235,7 @@ Create shaders \& buffers method.
 
 Creates this assets buffers, shaders and shader program. 
 
-Definition at line 193 of file Game\-Asset.\-cpp.
+Definition at line 189 of file Game\-Asset.\-cpp.
 
 \hypertarget{classGameAsset_ac728e885b52c93c3e4976a339de54545}{\index{Game\-Asset@{Game\-Asset}!make\-\_\-shader@{make\-\_\-shader}}
 \index{make\-\_\-shader@{make\-\_\-shader}!GameAsset@{Game\-Asset}}
@@ -198,7 +251,7 @@ Create Shaders method.
 
 Creates this assets shaders. 
 
-Definition at line 147 of file Game\-Asset.\-cpp.
+Definition at line 145 of file Game\-Asset.\-cpp.
 
 \hypertarget{classGameAsset_a9a3d6f67fb27e862458a02a7a7eb55dd}{\index{Game\-Asset@{Game\-Asset}!move\-X@{move\-X}}
 \index{move\-X@{move\-X}!GameAsset@{Game\-Asset}}
@@ -209,7 +262,7 @@ Definition at line 147 of file Game\-Asset.\-cpp.
 )}}\label{classGameAsset_a9a3d6f67fb27e862458a02a7a7eb55dd}
 Method to move object along x dimension by given amount. 
 
-Definition at line 241 of file Game\-Asset.\-cpp.
+Definition at line 234 of file Game\-Asset.\-cpp.
 
 \hypertarget{classGameAsset_a5252c2f4119fdc5be9bc8827fb351374}{\index{Game\-Asset@{Game\-Asset}!move\-Y@{move\-Y}}
 \index{move\-Y@{move\-Y}!GameAsset@{Game\-Asset}}
@@ -220,7 +273,7 @@ Definition at line 241 of file Game\-Asset.\-cpp.
 )}}\label{classGameAsset_a5252c2f4119fdc5be9bc8827fb351374}
 Method to move object along y dimension by given amount. 
 
-Definition at line 245 of file Game\-Asset.\-cpp.
+Definition at line 238 of file Game\-Asset.\-cpp.
 
 \hypertarget{classGameAsset_adfd83d678c0266dfc919bae6b6543495}{\index{Game\-Asset@{Game\-Asset}!move\-Z@{move\-Z}}
 \index{move\-Z@{move\-Z}!GameAsset@{Game\-Asset}}
@@ -231,7 +284,7 @@ Definition at line 245 of file Game\-Asset.\-cpp.
 )}}\label{classGameAsset_adfd83d678c0266dfc919bae6b6543495}
 Method to move object along z dimension by given amount. 
 
-Definition at line 249 of file Game\-Asset.\-cpp.
+Definition at line 242 of file Game\-Asset.\-cpp.
 
 \hypertarget{classGameAsset_aa4e2e9faf5cc690677549cbaf30ab80a}{\index{Game\-Asset@{Game\-Asset}!set\-G\-A\-P@{set\-G\-A\-P}}
 \index{set\-G\-A\-P@{set\-G\-A\-P}!GameAsset@{Game\-Asset}}
@@ -246,7 +299,7 @@ Sets \hyperlink{classGAPlus}{G\-A\-Plus} method.
 
 Method to change this classes \hyperlink{classGAPlus}{G\-A\-Plus}. 
 
-Definition at line 231 of file Game\-Asset.\-cpp.
+Definition at line 226 of file Game\-Asset.\-cpp.
 
 \hypertarget{classGameAsset_a08c617aafc70dcba441f53260f1bb09f}{\index{Game\-Asset@{Game\-Asset}!shader\-\_\-file\-\_\-contents@{shader\-\_\-file\-\_\-contents}}
 \index{shader\-\_\-file\-\_\-contents@{shader\-\_\-file\-\_\-contents}!GameAsset@{Game\-Asset}}
@@ -262,7 +315,7 @@ Shader file reader.
 
 Reads this \hyperlink{classGameAsset}{Game\-Asset}'s shader file and returns it. 
 
-Definition at line 115 of file Game\-Asset.\-cpp.
+Definition at line 114 of file Game\-Asset.\-cpp.
 
 
 

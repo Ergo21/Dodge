@@ -1,15 +1,13 @@
 #include "LevelLoader.h"
 
-vector<shared_ptr<GameAsset>> LevelLoader::getLevel(int i) //Loads new level file
-{	
+vector<shared_ptr<GameAsset>> LevelLoader::getLevel(int i) {	
 	level0Str.clear();
 	string line;
 	string file = "src/levels/" + to_string(i) + ".txt";
+
 	ifstream myfile (file);
-	if (myfile.is_open())
-	{
-		while ( getline (myfile,line) )
-		{
+	if (myfile.is_open()) {
+		while ( getline (myfile,line) ) {
 		  level0Str.push_back(line);
 		}
 	    	myfile.close();
@@ -20,8 +18,7 @@ vector<shared_ptr<GameAsset>> LevelLoader::getLevel(int i) //Loads new level fil
 	return level0;
 }
 
-void LevelLoader::buildLevel()	//Loads new scenes file
-{
+void LevelLoader::buildLevel() {
 	level0.clear();
 
 	string verShade = "shaders/hello-gl.v.glsl";
@@ -31,31 +28,25 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 	vector<Global::Force> forces; 
 	srand ( time(NULL) );
 
-	for(int i = 0; i < level0Str.size(); i++)
-	{
-		for(int j = 0; j < level0Str.at(i).length(); j++)
-		{
+	for(int i = 0; i < level0Str.size(); i++) {
+		for(int j = 0; j < level0Str.at(i).length(); j++) {
 			forces.clear();
-			switch(level0Str.at(i).at(j))
-			{
-				case 'F':
-				{
+			switch(level0Str.at(i).at(j)) {
+				case 'F': { //Creates floor
 					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, -1, i, 1, 1, 1, verShade, bluFShad)));
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::STAT);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('F', forces)));
 					break;
 				}
-				case 'W':
-				{
+				case 'W': { //Creates wall
 					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, 0, i, 1, 2, 1)));
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::STAT);
 					level0.back()->setGAP(shared_ptr<GAPlus>(new GAPlus('W', forces)));
 					break;
 				}
-				case 'P':
-				{
+				case 'P': { //Creates player and floor below player
 					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, -1, i, 1, 1, 1, verShade, bluFShad)));		
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::STAT);
@@ -72,8 +63,7 @@ void LevelLoader::buildLevel()	//Loads new scenes file
 					
 					break;
 				}
-				case 'B':
-				{
+				case 'B': { //Creates ball and floor below ball
 					level0.push_back(shared_ptr<CuboidAsset> (new CuboidAsset(j, -1, i, 1, 1, 1, verShade, bluFShad)));		
 					forces.push_back(Global::COLS);
 					forces.push_back(Global::STAT);

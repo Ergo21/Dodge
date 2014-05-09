@@ -16,7 +16,6 @@
 #include <fstream>
 #include <vector>
 #include <memory>
-#include <ctime>
 
 #include "Global.h"
 #include "Loop.h"

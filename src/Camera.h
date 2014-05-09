@@ -6,10 +6,11 @@
 	Based on code provided by aidan
 */
 
-#include <vectormath/scalar/cpp/vectormath_aos.h>
 
 #ifndef CAMERA_H_
 #define CAMERA_H_
+
+#include <vectormath/scalar/cpp/vectormath_aos.h>
 
 using namespace Vectormath::Aos;
 
@@ -45,7 +46,9 @@ public:
 	*/
 	Matrix4& getCameraM();
 
-private:
+private:	
+	static Camera * c;
+	Matrix4 * camera;
 	/*!
 	    Creates camera as 4x4 Matrix with no transformation
 	*/
@@ -54,11 +57,6 @@ private:
 	    Not implemented.
 	*/
 	Camera(Camera& c){};
-	/*!
-	    Not implemented.
-	*/
-	static Camera * c;
-	Matrix4 * camera;
 };
 
 #endif

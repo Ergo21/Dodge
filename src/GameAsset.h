@@ -5,6 +5,9 @@
 	Created on: 29 Apr 2014
 	Based on code provided by balor
 */
+#ifndef GAMEASSET_H_
+#define GAMEASSET_H_
+
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <stdlib.h>
@@ -14,18 +17,16 @@
 #include <memory>
 #include <vector>
 
-#include "vectormath/scalar/cpp/vectormath_aos.h"
 #include "Camera.h"
 #include "BoundingBox.h"
 #include "ModelTriangle.h"
 #include "PolygonTest.h"
 #include "GAPlus.h"
 
+#include "vectormath/scalar/cpp/vectormath_aos.h"
+
 using namespace std;
 using namespace Vectormath::Aos;
-
-#ifndef GAMEASSET_H_
-#define GAMEASSET_H_
 
   //! GameAsset Class
   /*!
@@ -33,7 +34,15 @@ using namespace Vectormath::Aos;
   */
 class GameAsset {
 public:
+	//!GameAsset Empty Constructor
+	/*!
+		Build object with default shaders
+	*/
 	GameAsset();
+	//!GameAsset Shader Constructor
+	/*!
+		Build object with given shaders
+	*/
 	GameAsset(const string & v_shader, const string & f_shader);
 	virtual ~GameAsset();
 	
@@ -47,7 +56,7 @@ public:
     		Method to change this classes GAPlus.
   	*/
 	void setGAP(shared_ptr<GAPlus> g);
-	//! Gets GAPlus method
+	//! Gets this GAPlus method
 	shared_ptr<GAPlus> getGAP();
 
 	//! Draw Method
@@ -71,6 +80,22 @@ public:
 	void moveZ(float z);
 
 protected:
+	/* For keeping track of OpenGL VBOs */
+	GLuint vertex_buffer, element_buffer;
+	GLuint vertex_shader, fragment_shader, program;
+	GLint position_attrib;
+	GLint camera_uniform;
+	GLint model_uniform;
+
+	GLfloat * g_vertex_buffer_data;
+	GLushort * g_element_buffer_data;
+      
+	// How many vertices/triangles in this model
+	int num_vertices;
+	int num_triangles;
+
+	shared_ptr<BoundingBox> bbox;
+
 	/* functions */
 	//! Create shaders & buffers method
   	/*!
@@ -102,31 +127,15 @@ protected:
   	*/
 	vector<ModelTriangle> getTriangles();
 
-	/* For keeping track of OpenGL VBOs */
-	GLuint vertex_buffer, element_buffer;
-	GLuint vertex_shader, fragment_shader, program;
-	GLint position_attrib;
-	GLint camera_uniform;
-	GLint model_uniform;
-
-	GLfloat * g_vertex_buffer_data;
-	GLushort * g_element_buffer_data;
-      
-	// How many vertices/triangles in this model
-	int num_vertices;
-	int num_triangles;
-
-	shared_ptr<BoundingBox> bbox;
-
  private:
+	string v_shader;
+	string f_shader;
+	shared_ptr<GAPlus> thiGAP;
 	//! Seperate initialise method
   	/*!
     		Currently creates this GameAsset's BoundingBox
   	*/
 	void common_init(); // because we don't have delegating constructors yet (http://gcc.gnu.org/projects/cxx0x.html)
-	string v_shader;
-	string f_shader;
-	shared_ptr<GAPlus> thiGAP;
 };
 
 #endif

@@ -7,8 +7,7 @@
 
 #include "GAPlus.h"
 
-GAPlus::GAPlus(char t, vector<Global::Force> f)
-{
+GAPlus::GAPlus(char t, vector<Global::Force> f) {
 	thiType = t;
 	thiFor = f;
 	movX = 0;
@@ -16,17 +15,14 @@ GAPlus::GAPlus(char t, vector<Global::Force> f)
 	movZ = 0;
 }
 
-GAPlus::~GAPlus()
-{
+GAPlus::~GAPlus() {
 }
 
-char GAPlus::getTy()
-{
+char GAPlus::getTy() {
 	return thiType;
 }
 
-vector<Global::Force> GAPlus::getFor()
-{
+vector<Global::Force> GAPlus::getFor() {
 	return thiFor;
 }
 
@@ -42,17 +38,14 @@ float GAPlus::getMovZ() {
 	return movZ;
 }
 
-void GAPlus::setMovX(float x) 
-{
+void GAPlus::setMovX(float x) {
 	movX = x;
 }
 
-void GAPlus::setMovY(float y) 
-{
+void GAPlus::setMovY(float y) {
 	movY = y;
 }
 
-void GAPlus::setMovZ(float z) 
-{
+void GAPlus::setMovZ(float z) {
 	movZ = z;
 }

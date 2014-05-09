@@ -9,13 +9,14 @@
 #ifndef BOUNDINGBOX_H_
 #define BOUNDINGBOX_H_
 
-#include <utility>
+
 #include <memory>
+#include <utility>
 
 #include "vectormath/scalar/cpp/vectormath_aos.h"
 
-using namespace Vectormath::Aos;
 using namespace std;
+using namespace Vectormath::Aos;
 
 static Vector3 UNIT_X_AXIS(1.0, 0.0, 0.0);
 static Vector3 UNIT_Y_AXIS(0.0, 1.0, 0.0);
