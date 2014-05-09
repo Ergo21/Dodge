@@ -15,7 +15,6 @@
 
 class Global{
 public:
-	//enum ObjCol{NONE, LEFT, RIGHT, UP, DOWN, FOR, BACK};
 	enum Force{GRAV, COLS, STAT, DYNA};
 };
 

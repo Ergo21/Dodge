@@ -55,6 +55,8 @@ void CuboidAsset::buildObj(float x, float y, float z, float sX, float sY, float 
 	g_vertex_buffer_data = new GLfloat[num_vertices * 3];
 	g_element_buffer_data = new GLushort[num_triangles * 3];
 
+	//Vertex data
+
 	g_vertex_buffer_data[0]  = -sX/2;
 	g_vertex_buffer_data[1]  = -sY/2;		
 	g_vertex_buffer_data[2]  = -sZ/2;
@@ -86,6 +88,8 @@ void CuboidAsset::buildObj(float x, float y, float z, float sX, float sY, float 
 	g_vertex_buffer_data[21] = -sX/2 + sX;
 	g_vertex_buffer_data[22] = -sY/2 + sY;		
 	g_vertex_buffer_data[23] = -sZ/2 + sZ;
+
+	//Indices data
 
 	g_element_buffer_data[0]  = 0;
 	g_element_buffer_data[1]  = 1;

@@ -20,7 +20,7 @@ using namespace std;
 	
 //! ModelTriangle class
 /*!
-  This class is a triangle made up of 3 3D points. Used for Polygon soup collision detection and model loading.  	
+  This class is a triangle made up of 3 3D points. Used for Polygon soup collision detection and model loading. Not currently used.  	
 */
 
 class ModelTriangle {

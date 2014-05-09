@@ -49,7 +49,7 @@ public:
 	void setMovZ(float z);
 private:
 	char thiType;
-	vector<Global::Force> thiFor; //List of forces by number 0 = Collisionable, 1 = Gravity
+	vector<Global::Force> thiFor; //List of forces
 	float movX;
 	float movY;	
 	float movZ;

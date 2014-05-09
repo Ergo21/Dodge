@@ -50,6 +50,10 @@ public:
 	//! Gets GAPlus method
 	shared_ptr<GAPlus> getGAP();
 
+	//! Draw Method
+	/*!
+		Draws object on screen based on vertex and element buffer data
+	*/
 	virtual void draw();
 	virtual void update()=0;
 

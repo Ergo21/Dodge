@@ -26,7 +26,7 @@ public:
 private:
 	//! Build level method
   	/*!
-  	  Creates the vector contents.
+  	  Creates the vector contents. P = player (1 only), F = floor, W = wall, B = "ball"
   	*/
 	void buildLevel();
 	vector<shared_ptr<GameAsset>> level0;				//Holds topography strings until sent to Level
