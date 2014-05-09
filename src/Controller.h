@@ -35,7 +35,7 @@ class Controller {
 	Controller(Data * d, Physics * p);
 	//! Move Mouse Event Handler
 	/*!
-		Currently only handles mouse x movement (mouse y movement is in code but buggy), rotates the camera.
+		Rotates the camera, in the x and y axis, however only does them one at a time making diagonal mouse movement difficult.
 	*/
 	void mMoveEvents(SDL_Event &event);
 	//! Key Down Event Handler

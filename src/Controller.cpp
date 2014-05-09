@@ -23,23 +23,27 @@ void Controller::mMoveEvents(SDL_Event &event) {		//Mouse Motion
 
 	Matrix4 camera = Camera::getInstance().getCameraM();			
 
-	if(event.motion.xrel < -5) {
-		Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng*((int)event.motion.xrel/10), locUp)));
-		tAngMem -= tAng*((int)event.motion.xrel/10);
+	if(event.motion.xrel*event.motion.xrel > event.motion.yrel*event.motion.yrel) {
+		if(event.motion.xrel < -5) {
+			Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng*((int)event.motion.xrel/10), locUp)));
+			tAngMem -= tAng*((int)event.motion.xrel/10);
+		}
+		else if(event.motion.xrel > 5) {
+			Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng*((int)event.motion.xrel/10), locUp)));
+			tAngMem -= tAng*((int)event.motion.xrel/10);
+		}
 	}
-	else if(event.motion.xrel > 5) {
-		Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng*((int)event.motion.xrel/10), locUp)));
-		tAngMem -= tAng*((int)event.motion.xrel/10);
-	}
+	else {
 
-	//if(event.motion.yrel > 5)	//Y camera movement, Bugs when used for too long
-	//{
-	//	Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng, locRig)));
-	//}
-	//else if(event.motion.yrel < -5)
-	//{				
-	//	Camera::getInstance().setCamera((camera * Matrix4::rotation(tAng, locRig)));
-	//}
+		if(event.motion.yrel > 5)	//Y camera movement, Bugs when used for too long
+		{
+			Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng*((int)event.motion.yrel/10), locRig)));
+		}
+		else if(event.motion.yrel < -5) {				
+			Camera::getInstance().setCamera((camera * Matrix4::rotation(-tAng*((int)event.motion.yrel/10), locRig)));
+		}
+
+	}
 				
 	if(tAngMem >= 3.1415926) {
 		tAngMem -= 2*3.1415926;
